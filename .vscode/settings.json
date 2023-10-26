@@ -1,0 +1,10 @@
+{
+  "idf.portWin": "COM4",
+  "idf.adapterTargetName": "esp32s3",
+  "idf.openOcdConfigs": [
+    "interface/ftdi/esp32_devkitj_v1.cfg",
+    "target/esp32s3.cfg"
+  ],
+  "idf.flashType": "UART",
+  "C_Cpp.default.compilerPath": "C:\\Users\\Administrator\\.espressif\\tools\\xtensa-esp32s3-elf\\esp-12.2.0_20230208\\xtensa-esp32s3-elf\\bin\\xtensa-esp32s3-elf-gcc.exe"
+}
