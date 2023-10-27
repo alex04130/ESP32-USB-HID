@@ -63,4 +63,6 @@ C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/ulp/libulp.a
 C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/usb/libusb.a
 C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/espressif__esp-idf-cxx/libespressif__esp-idf-cxx.a
+C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/espressif__tinyusb/libespressif__tinyusb.a
+C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/espressif__esp_tinyusb/libespressif__esp_tinyusb.a
 C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/main/libmain.a

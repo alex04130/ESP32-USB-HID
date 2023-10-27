@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "bootloader",
-    "project_version":    "1",
+    "project_version":    "v5.1.1",
     "project_path":       "C:/Users/Administrator/esp/esp-idf/components/bootloader/subproject",
     "idf_path":           "C:/Users/Administrator/esp/esp-idf",
     "build_dir":          "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader",
@@ -11,7 +11,7 @@
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",
     "build_type":         "flash_app",
-    "git_revision":       "GIT-NOTFOUND",
+    "git_revision":       "v5.1.1",
     "target":             "esp32s3",
     "rev":                "",
     "min_rev":            "0",
