@@ -104,8 +104,6 @@ unsigned char bCapacityMode = 2; // units are in %%
 
 uint16_t iPresentStatus = 0, iPreviousStatus = 0;
 
-
-
 // typedef struct
 // {
 //     tusb_desc_device_t *descriptor;   //    设备描述符结构体
@@ -139,18 +137,18 @@ uint16_t iPresentStatus = 0, iPreviousStatus = 0;
 
 tusb_desc_device_t descriptor_config = {
     .bLength = sizeof(descriptor_config),
-    .bDescriptorType = TUSB_DESC_INTERFACE_POWER, //    0x01
-    .bcdUSB = 0x1001,                             //    USB2.0
+    .bDescriptorType = 0x01, //    0x01
+    .bcdUSB = 0x0110,        //    USB1.1
 
-    .bDeviceClass = TUSB_CLASS_HID,
+    .bDeviceClass = 0x00,
     .bDeviceSubClass = 0x00,
     .bDeviceProtocol = 0x00,
 
     .bMaxPacketSize0 = CFG_TUD_ENDPOINT0_SIZE, //    64
 
-    .idVendor = 0x303A,
-    .idProduct = 0x4002, //    0x4010
-    .bcdDevice = 0x100,
+    .idVendor = 0xb238,
+    .idProduct = 0x0180,
+    .bcdDevice = 0x0100,
 
     .iManufacturer = 0x01,
     .iProduct = 0x02,
@@ -161,11 +159,11 @@ tusb_desc_device_t descriptor_config = {
 const char *string_descriptor[] = {
     // array of pointer to string descriptors
     (char[]){0x08, 0x04},     // 0: 支持语言：中文 (0x0809)
-    "Skele",                  // 1: 制造商
-    "Skele-DC",               // 2: 产品
-    "Skele-DC1",              // 3: 串行、芯片ID
-    "SKeleUSB HID"            // 4: HID
-    "SKele USB HID interface" // 5: 配置描述符
+    "深空电子",               // 1: 制造商
+    "深空电子HID通用UPS项目", // 2: 产品
+    "1",                      // 3: 串行、芯片ID
+    "深空电子HID",            // 4: HID
+    "深空电子HID接口",        // 5: 配置描述符
 };
 
 uint8_t const desc_hid_report[] = {
@@ -384,6 +382,11 @@ extern "C" void app_main()
     ESP_LOGI(TAG, "USB initialization DONE");
     ESP_LOGI(TAG, "initialization DONE!\n:)");
 
+    for (int i = 0; i < 6; i++)
+    {
+        ESP_LOGI(TAG, "String desc %d:%s\n", i, string_descriptor[i]);
+    }
+
     while (1)
     {
         ESP_LOGI(TAG, "still on");
@@ -464,6 +467,7 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
         }
         case HID_PD_REMAININGCAPACITY:
         {
+            ESP_LOGI(TAG, "RESVIED REQUEST ON iRemaining\n");
             buffer[0] = iRemaining;
             return 1;
         }
@@ -512,4 +516,28 @@ uint8_t const *tud_hid_descriptor_report_cb(uint8_t instance)
 
 void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const *buffer, uint16_t bufsize)
 {
+    // switch (int(report_type))
+    // {
+    // case HID_REPORT_TYPE_FEATURE:
+    // {
+    //     switch (report_id)
+    //     {
+    //     case HID_PD_REMNCAPACITYLIMIT:
+    //     {
+    //         buffer + 0 = iRemnCapacityLimit;
+    //         return;
+    //     }
+    //     }
+    // }
+    // }
+    ESP_LOGI(TAG, "Get_report Request: %d, type=%s , id: %d , len:%d\n",
+             instance,
+             (report_type == HID_REPORT_TYPE_INVALID ? "HID_REPORT_TYPE_INVALID" : (report_type == HID_REPORT_TYPE_INPUT ? "HID_REPORT_TYPE_INPUT" : (report_type == HID_REPORT_TYPE_OUTPUT ? "HID_REPORT_TYPE_OUTPUT" : "HID_REPORT_TYPE_FEATURE"))),
+             report_id,
+             bufsize);
+    for (int i = 0; i < bufsize; i++)
+    {
+        ESP_LOGI(TAG, "Report %d:%d\n", i, buffer[i]);
+    }
+    ESP_LOGI(TAG, "end REQUSET\n");
 }
