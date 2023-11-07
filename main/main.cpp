@@ -11,7 +11,98 @@
 
 using namespace std;
 
+#define SetBitTrue(a, b) a |= (1 << b)
+#define SetBitFalse(a, b) a &= ~(1 << b)
+#define GetBit(a, b) a & (1 << b)
+
+#define HID_PD_IPRODUCT 0x01     // FEATURE ONLY
+#define HID_PD_SERIAL 0x02       // FEATURE ONLY
+#define HID_PD_MANUFACTURER 0x03 // FEATURE ONLY
+#define IDEVICECHEMISTRY 0x04
+#define IOEMVENDOR 0x05
+
+#define HID_PD_RECHARGEABLE 0x06  // FEATURE ONLY
+#define HID_PD_PRESENTSTATUS 0x07 // INPUT OR FEATURE(required by Windows)
+#define HID_PD_REMAINTIMELIMIT 0x08
+#define HID_PD_MANUFACTUREDATE 0x09
+#define HID_PD_CONFIGVOLTAGE 0x0A     // 10 FEATURE ONLY
+#define HID_PD_VOLTAGE 0x0B           // 11 INPUT (NA) OR FEATURE(implemented)
+#define HID_PD_REMAININGCAPACITY 0x0C // 12 INPUT OR FEATURE(required by Windows)
+#define HID_PD_RUNTIMETOEMPTY 0x0D
+#define HID_PD_FULLCHRGECAPACITY 0x0E // 14 INPUT OR FEATURE. Last Full Charge Capacity
+#define HID_PD_WARNCAPACITYLIMIT 0x0F
+#define HID_PD_CPCTYGRANULARITY1 0x10
+#define HID_PD_REMNCAPACITYLIMIT 0x11
+#define HID_PD_DELAYBE4SHUTDOWN 0x12 // 18 FEATURE ONLY
+#define HID_PD_DELAYBE4REBOOT 0x13
+#define HID_PD_AUDIBLEALARMCTRL 0x14 // 20 FEATURE ONLY
+#define HID_PD_CURRENT 0x15          // 21 FEATURE ONLY
+#define HID_PD_CAPACITYMODE 0x16
+#define HID_PD_DESIGNCAPACITY 0x17
+#define HID_PD_CPCTYGRANULARITY2 0x18
+#define HID_PD_AVERAGETIME2FULL 0x1A
+#define HID_PD_AVERAGECURRENT 0x1B
+#define HID_PD_AVERAGETIME2EMPTY 0x1C
+
+#define HID_PD_IDEVICECHEMISTRY 0x1F // Feature
+#define HID_PD_IOEMINFORMATION 0x20  // Feature
+
+// PresenStatus dynamic flags
+#define PRESENTSTATUS_CHARGING 0x00
+#define PRESENTSTATUS_DISCHARGING 0x01
+#define PRESENTSTATUS_ACPRESENT 0x02
+#define PRESENTSTATUS_BATTPRESENT 0x03
+#define PRESENTSTATUS_BELOWRCL 0x04
+#define PRESENTSTATUS_RTLEXPIRED 0x05
+#define PRESENTSTATUS_NEEDREPLACE 0x06
+#define PRESENTSTATUS_VOLTAGENR 0x07
+#define PRESENTSTATUS_FULLCHARGE 0x08
+#define PRESENTSTATUS_FULLDISCHARGE 0x09
+#define PRESENTSTATUS_SHUTDOWNREQ 0x0A
+#define PRESENTSTATUS_SHUTDOWNIMNT 0x0B
+#define PRESENTSTATUS_COMMLOST 0x0C
+#define PRESENTSTATUS_OVERLOAD 0x0D
+
+// 字符串描述符位置
+#define IPRODUCT 2
+#define ISERIAL 3
+#define IMANUFACTURER 1
+
+#define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_HID_INOUT_DESC_LEN)
+#define ITF_NUM_TOTAL 1
+
+// Physical parameters
+const uint16_t iConfigVoltage = 1380;
+uint16_t iVoltage = 1300, iPrevVoltage = 0;
+uint16_t iRunTimeToEmpty = 0, iPrevRunTimeToEmpty = 0;
+uint16_t iAvgTimeToFull = 7200;
+uint16_t iAvgTimeToEmpty = 7200;
+uint16_t iRemainTimeLimit = 600;
+int16_t iDelayBe4Reboot = -1;
+int16_t iDelayBe4ShutDown = -1;
+uint16_t IMANUFACTURERDATE = 100;
+
+// Parameters for ACPI compliancy
+const unsigned char iDesignCapacity = 100;
+unsigned char iWarnCapacityLimit = 10; // warning at 10%
+unsigned char iRemnCapacityLimit = 5;  // low at 5%
+const unsigned char bCapacityGranularity1 = 1;
+const unsigned char bCapacityGranularity2 = 1;
+unsigned char iFullChargeCapacity = 100;
+
+unsigned char iRemaining = 70, iPrevRemaining = 0;
+
+int iRes = 0;
+
+const unsigned char bDeviceChemistry = IDEVICECHEMISTRY;
+const unsigned char bOEMVendor = IOEMVENDOR;
+
 static const char *TAG = "SKele-DC";
+
+unsigned char bRechargable = 1;
+unsigned char bCapacityMode = 2; // units are in %%
+
+uint16_t iPresentStatus = 0, iPreviousStatus = 0;
 
 const char *hid_string_descriptor[5] = {
     // array of pointer to string descriptors
@@ -22,41 +113,41 @@ const char *hid_string_descriptor[5] = {
     "Example HID interface", // 4: HID
 };
 
-typedef struct
-{
-    tusb_desc_device_t *descriptor;   //    设备描述符结构体
-    const char **string_descriptor;   //    字符串描述符
-    const uint8_t *config_descriptor; //    配置描述符数组
-    bool external_phy;                //    外部PHY，一般为false
-} tinyusb_config_t;
+// typedef struct
+// {
+//     tusb_desc_device_t *descriptor;   //    设备描述符结构体
+//     const char **string_descriptor;   //    字符串描述符
+//     const uint8_t *config_descriptor; //    配置描述符数组
+//     bool external_phy;                //    外部PHY，一般为false
+// } tinyusb_config_t;
 
-typedef struct TU_ATTR_PACKED
-{
-    uint8_t bLength;         //    设备描述符的字节数大小
-    uint8_t bDescriptorType; //    描述符类型，设备描述符为0x01
-    uint16_t bcdUSB;         //    USB版本号
+// typedef struct TU_ATTR_PACKED
+// {
+//     uint8_t bLength;         //    设备描述符的字节数大小
+//     uint8_t bDescriptorType; //    描述符类型，设备描述符为0x01
+//     uint16_t bcdUSB;         //    USB版本号
 
-    uint8_t bDeviceClass;    //    USB分配的设备类代码，0x01~0xfe为标准设备类，0xff为厂商自定义类型
-    uint8_t bDeviceSubClass; //    USB分配的子类代码
-    uint8_t bDeviceProtocol; //    USB分配的设备协议代码
-    uint8_t bMaxPacketSize0; //    端点0的最大信息包大小
+//     uint8_t bDeviceClass;    //    USB分配的设备类代码，0x01~0xfe为标准设备类，0xff为厂商自定义类型
+//     uint8_t bDeviceSubClass; //    USB分配的子类代码
+//     uint8_t bDeviceProtocol; //    USB分配的设备协议代码
+//     uint8_t bMaxPacketSize0; //    端点0的最大信息包大小
 
-    uint16_t idVendor;  //    制造商ID
-    uint16_t idProduct; //    产品ID
+//     uint16_t idVendor;  //    制造商ID
+//     uint16_t idProduct; //    产品ID
 
-    uint16_t bcdDevice; //    设备出厂编号
+//     uint16_t bcdDevice; //    设备出厂编号
 
-    uint8_t iManufacturer; //    制造商的字符串描述符索引
-    uint8_t iProduct;      //    产品的字符串描述符索引
-    uint8_t iSerialNumber; //    设备序列号的字符串描述符索引
+//     uint8_t iManufacturer; //    制造商的字符串描述符索引
+//     uint8_t iProduct;      //    产品的字符串描述符索引
+//     uint8_t iSerialNumber; //    设备序列号的字符串描述符索引
 
-    uint8_t bNumConfigurations; //    可能的配置数量
-} tusb_desc_device_t;
+//     uint8_t bNumConfigurations; //    可能的配置数量
+// } tusb_desc_device_t;
 
-tusb_desc_device_t descriptor_kconfig = {
-    .bLength = sizeof(descriptor_kconfig),
+tusb_desc_device_t descriptor_config = {
+    .bLength = sizeof(descriptor_config),
     .bDescriptorType = TUSB_DESC_INTERFACE_POWER, //    0x01
-    .bcdUSB = 0x0200,                             //    USB2.0
+    .bcdUSB = 0x0110,                             //    USB2.0
 
     .bDeviceClass = TUSB_CLASS_HID,
     .bDeviceSubClass = 0x00,
@@ -64,9 +155,9 @@ tusb_desc_device_t descriptor_kconfig = {
 
     .bMaxPacketSize0 = CFG_TUD_ENDPOINT0_SIZE, //    64
 
-    .idVendor = 0xCafe,
-    .idProduct = USB_TUSB_PID, //    0x4010
-    .bcdDevice = 0x0001,
+    .idVendor = 0x303A,
+    .idProduct = 0x4002, //    0x4010
+    .bcdDevice = 0x100,
 
     .iManufacturer = 0x01,
     .iProduct = 0x02,
@@ -76,24 +167,12 @@ tusb_desc_device_t descriptor_kconfig = {
 
 const char *string_descriptor[] = {
     // array of pointer to string descriptors
-    (char[]){0x09, 0x04}, // 0: 支持语言：英语 (0x0409)
-    "Skele",              // 1: 制造商
-    "Skele-DC",           // 2: 产品
-    "123456",             // 3: 串行、芯片ID
-    "TinyUSB HID"         // 4: HID
-    "What is it?"         // 5: 配置描述符
-};
-
-uint8_t const desc_configuration[] = {
-    0x09, // 字节数
-    0x02, // 以字节为单位的描述符大小
-    0xff,
-    0xff, // 配置返回的数据总长度
-    0x01, // 配置支持的接口数量
-    0x01, // Get Configuration 和Set Configuration请求的配置值
-    0x05, // 字符串描述符索引
-    0x20, // 配置特性
-    0x00  // 设备从总线获取的最大功耗
+    (char[]){0x08, 0x04},     // 0: 支持语言：中文 (0x0809)
+    "Skele",                  // 1: 制造商
+    "Skele-DC",               // 2: 产品
+    "Skele-DC1",              // 3: 串行、芯片ID
+    "SKeleUSB HID"            // 4: HID
+    "SKele USB HID interface" // 5: 配置描述符
 };
 
 uint8_t const desc_hid_report[] = {
@@ -289,10 +368,24 @@ uint8_t const desc_hid_report[] = {
     0xC0                            // END_COLLECTION
 };
 
+uint8_t const desc_configuration[] = {
+    //    配置描述符
+    TUD_CONFIG_DESCRIPTOR(1, ITF_NUM_TOTAL, 0x04, TUSB_DESC_TOTAL_LEN, 0, 100),
+
+    //    接口描述符、HID描述符、端点描述符
+    TUD_HID_INOUT_DESCRIPTOR(1, 0x04, 0, sizeof(desc_hid_report), 0x01, 0x81, 64, 10)};
+
 extern "C" void app_main()
 {
     ESP_LOGI(TAG, "USB initialization");
-    const tinyusb_config_t tusb_cfg = {};
+    const tinyusb_config_t tusb_cfg = {
+        .device_descriptor = NULL,
+        .string_descriptor = hid_string_descriptor,
+        .string_descriptor_count = sizeof(hid_string_descriptor) / sizeof(hid_string_descriptor[0]),
+        .external_phy = false,
+        .configuration_descriptor = desc_configuration,
+        .self_powered = false,
+    };
 
     ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
     ESP_LOGI(TAG, "USB initialization DONE");
@@ -300,7 +393,130 @@ extern "C" void app_main()
 
     while (1)
     {
-        cout << "Hello World!" << endl;
+        ESP_LOGI(TAG, "still on");
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
+}
+
+uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t *buffer, uint16_t reqlen)
+{
+    switch (int(report_type))
+    {
+    case HID_REPORT_TYPE_FEATURE:
+    {
+        switch (report_id)
+        {
+        case HID_PD_PRESENTSTATUS:
+        {
+            buffer[0] = iPresentStatus & 0x00ff;
+            buffer[1] = iPresentStatus >> 8 & 0x00ff;
+            return 2;
+        }
+        case HID_PD_VOLTAGE:
+        {
+            buffer[0] = iVoltage & 0x00ff;
+            buffer[1] = iVoltage >> 8 & 0x00ff;
+            return 2;
+        }
+        case HID_PD_DESIGNCAPACITY:
+        {
+            buffer[0] = iDesignCapacity;
+            return 1;
+        }
+        case HID_PD_IDEVICECHEMISTRY:
+        {
+            buffer[0] = bDeviceChemistry;
+            return 1;
+        }
+        case HID_PD_SERIAL:
+        {
+            buffer[0] = 3;
+            return 1;
+        }
+        case HID_PD_IOEMINFORMATION:
+        {
+            buffer[0] = bOEMVendor;
+            return 1;
+        }
+        case HID_PD_IPRODUCT:
+        {
+            buffer[0] = IPRODUCT;
+            return 1;
+        }
+        case HID_PD_MANUFACTURER:
+        {
+            buffer[0] = IMANUFACTURER;
+            return 1;
+        }
+        case HID_PD_MANUFACTUREDATE:
+        {
+            buffer[0] = IMANUFACTURERDATE & 0x00ff;
+            buffer[1] = IMANUFACTURERDATE >> 8 & 0x00ff;
+            return 2;
+        }
+        case HID_PD_FULLCHRGECAPACITY:
+        {
+            buffer[0] = iFullChargeCapacity;
+            return 1;
+        }
+        case HID_PD_WARNCAPACITYLIMIT:
+        {
+            buffer[0] = iWarnCapacityLimit;
+            return 1;
+        }
+        case HID_PD_REMNCAPACITYLIMIT:
+        {
+            buffer[0] = iRemnCapacityLimit;
+            return 1;
+        }
+        case HID_PD_REMAININGCAPACITY:
+        {
+            buffer[0] = iRemaining;
+            return 1;
+        }
+        case HID_PD_RUNTIMETOEMPTY:
+        {
+            buffer[0] = iRunTimeToEmpty & 0x00ff;
+            buffer[1] = iRunTimeToEmpty >> 8 & 0x00ff;
+            return 2;
+        }
+        case HID_PD_CPCTYGRANULARITY1:
+        {
+            buffer[0] = bCapacityGranularity1;
+            return 1;
+        }
+        case HID_PD_CPCTYGRANULARITY2:
+        {
+            buffer[0] = bCapacityGranularity2;
+            return 1;
+        }
+        case HID_PD_CAPACITYMODE:
+        {
+            buffer[0] = bCapacityMode;
+            return 1;
+        }
+        }
+    }
+    }
+    ESP_LOGI(TAG, "Get_report Request: %d, type=%s , id: %d , len:%d\n",
+             instance,
+             (report_type == HID_REPORT_TYPE_INVALID ? "HID_REPORT_TYPE_INVALID" : (report_type == HID_REPORT_TYPE_INPUT ? "HID_REPORT_TYPE_INPUT" : (report_type == HID_REPORT_TYPE_OUTPUT ? "HID_REPORT_TYPE_OUTPUT" : "HID_REPORT_TYPE_FEATURE"))),
+             report_id,
+             reqlen);
+    for (int i = 0; i < reqlen; i++)
+    {
+        ESP_LOGI(TAG, "Report %d:%d\n", i, buffer[-i]);
+    }
+    ESP_LOGI(TAG, "end REQUSET\n");
+    return 0;
+}
+
+uint8_t const *tud_hid_descriptor_report_cb(uint8_t instance)
+{
+    // We use only one interface and one HID report descriptor, so we can ignore parameter 'instance'
+    return desc_hid_report;
+}
+
+void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const *buffer, uint16_t bufsize)
+{
 }
