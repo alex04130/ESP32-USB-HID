@@ -104,14 +104,7 @@ unsigned char bCapacityMode = 2; // units are in %%
 
 uint16_t iPresentStatus = 0, iPreviousStatus = 0;
 
-const char *hid_string_descriptor[5] = {
-    // array of pointer to string descriptors
-    (char[]){0x09, 0x04},    // 0: is supported language is English (0x0409)
-    "TinyUSB",               // 1: Manufacturer
-    "TinyUSB Device",        // 2: Product
-    "123456",                // 3: Serials, should use chip ID
-    "Example HID interface", // 4: HID
-};
+
 
 // typedef struct
 // {
@@ -147,7 +140,7 @@ const char *hid_string_descriptor[5] = {
 tusb_desc_device_t descriptor_config = {
     .bLength = sizeof(descriptor_config),
     .bDescriptorType = TUSB_DESC_INTERFACE_POWER, //    0x01
-    .bcdUSB = 0x0110,                             //    USB2.0
+    .bcdUSB = 0x1001,                             //    USB2.0
 
     .bDeviceClass = TUSB_CLASS_HID,
     .bDeviceSubClass = 0x00,
@@ -379,9 +372,9 @@ extern "C" void app_main()
 {
     ESP_LOGI(TAG, "USB initialization");
     const tinyusb_config_t tusb_cfg = {
-        .device_descriptor = NULL,
-        .string_descriptor = hid_string_descriptor,
-        .string_descriptor_count = sizeof(hid_string_descriptor) / sizeof(hid_string_descriptor[0]),
+        .device_descriptor = &descriptor_config,
+        .string_descriptor = string_descriptor,
+        .string_descriptor_count = sizeof(string_descriptor) / sizeof(string_descriptor[0]),
         .external_phy = false,
         .configuration_descriptor = desc_configuration,
         .self_powered = false,
