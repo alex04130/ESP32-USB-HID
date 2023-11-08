@@ -11,6 +11,9 @@
 
 using namespace std;
 
+#define __BQ4050__ENABLE__
+#define __SK_BQ4050_USB_HID__
+
 #define SetBitTrue(a, b) a |= (1 << b)
 #define SetBitFalse(a, b) a &= ~(1 << b)
 #define GetBit(a, b) a & (1 << b)
@@ -71,6 +74,284 @@ using namespace std;
 #define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_HID_INOUT_DESC_LEN)
 #define ITF_NUM_TOTAL 1
 
+#ifdef __BQ4050__ENABLE__
+#include "driver/i2c.h"
+// I2C设置
+#define I2C_MASTER_SCL_IO 38        /*!< GPIO number used for I2C master clock */
+#define I2C_MASTER_SDA_IO 39        /*!< GPIO number used for I2C master data  */
+#define I2C_MASTER_NUM I2C_NUM_0    /*!< I2C master i2c port number, the number of i2c peripheral interfaces available will depend on the chip */
+#define I2C_MASTER_FREQ_HZ 400000   /*!< I2C master clock frequency */
+#define I2C_MASTER_TX_BUF_DISABLE 0 /*!< I2C master doesn't need buffer */
+#define I2C_MASTER_RX_BUF_DISABLE 0 /*!< I2C master doesn't need buffer */
+#define I2C_MASTER_TIMEOUT_MS 1000
+
+// BQ4050配置
+#define BQ4050_ADDR (0x16 >> 0)
+
+static esp_err_t i2c_master_init(void)
+{
+    i2c_config_t conf = {
+        .mode = I2C_MODE_MASTER,
+        .sda_io_num = I2C_MASTER_SDA_IO,
+        .scl_io_num = I2C_MASTER_SCL_IO,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_pullup_en = GPIO_PULLUP_ENABLE,
+        .master{
+            .clk_speed = I2C_MASTER_FREQ_HZ},
+    };
+
+    i2c_param_config(I2C_MASTER_NUM, &conf);
+
+    return i2c_driver_install(I2C_MASTER_NUM, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
+}
+
+static esp_err_t bq4050_register_read(uint8_t reg_addr, uint8_t *data, size_t len)
+{
+    return i2c_master_write_read_device(I2C_MASTER_NUM, BQ4050_ADDR, &reg_addr, 1, data, len, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+}
+static esp_err_t bq4050_register_write(uint8_t *data, size_t len)
+{
+    return i2c_master_write_to_device(I2C_MASTER_NUM, BQ4050_ADDR, data, len, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+}
+
+// inblock前面必须加0x44地址
+// inLen的长度不包含0x44地址标识符
+void bq_MACReadBlock(uint8_t *inBlock, uint8_t inLen, uint8_t *outBlock, uint8_t outLen)
+{
+    uint8_t retryCnt = 100;
+    while (1)
+    {
+        bq4050_register_write(inBlock, inLen + 1);
+        bq4050_register_read(0x44, outBlock, outLen);
+        if (inBlock[2] == outBlock[1] && inBlock[3] == outBlock[2])
+        {
+            break;
+        }
+        vTaskDelay(20 / portTICK_PERIOD_MS);
+    }
+}
+
+uint8_t bq_BattState() // Return CHG/DSG(0xC?/0x0?), OK/Bad(0x0?/0x3?), TCTDFCFD(bit3 2 1 0)
+{
+    uint8_t battStatus[2], battDataBuf[7], ret = 0x00;
+    uint8_t battCmd[4] = {0x44, 0x02, 0x50, 0x00}; // SafetyAlert MAC Cmd
+    ESP_ERROR_CHECK(bq4050_register_read(0x16, battStatus, 2));
+    ret |= (((battStatus[0] & 0x40) == 0x40) ? 0x00 : 0xc0);
+    bq_MACReadBlock(battCmd, 3, battDataBuf, 7);
+    battDataBuf[6] &= 0x0f; // Clear RSVD
+    battDataBuf[5] &= 0xfd;
+    battDataBuf[4] &= 0x7a;
+    battDataBuf[3] &= 0xbf;
+    if ((battDataBuf[3] | battDataBuf[4] | battDataBuf[5] | battDataBuf[6]) != 0)
+    {
+        ret |= 0x30;
+        return ret;
+    }
+    battCmd[2] = 0x54;
+    bq_MACReadBlock(battCmd, 3, battDataBuf, 7);
+    if ((battDataBuf[4] & 0x60) != 0)
+    {
+        ret |= 0x30;
+    }
+    battCmd[2] = 0x51;
+    bq_MACReadBlock(battCmd, 3, battDataBuf, 7);
+    battDataBuf[6] &= 0x0f; // Clear RSVD
+    battDataBuf[5] &= 0xd5;
+    battDataBuf[4] &= 0x7f;
+    battDataBuf[3] &= 0xff;
+    if ((battDataBuf[3] | battDataBuf[4] | battDataBuf[5] | battDataBuf[6]) != 0)
+    {
+        ret |= 0x30;
+    }
+    battCmd[2] = 0x56;
+    bq_MACReadBlock(battCmd, 3, battDataBuf, 5);
+    ret |= (battDataBuf[3] & 0x0f);
+    return ret;
+}
+
+uint16_t bq_GetAdvState()
+{ // Return XDSG/XCHG/PF/SS  FC/FD/TAPR/VCT  CB/SMTH/SU/IN  VDQ/FCCX/EDV2/EDV1
+    uint16_t ret = 0x0000;
+    uint8_t battDataBuf[7], battCmd[4] = {0x44, 0x02, 0x54, 0x00}; // OperationStatus MAC Cmd
+    bq_MACReadBlock(battCmd, 3, battDataBuf, 7);
+    ret |= ((battDataBuf[3] & 0x40) == 0x40) ? (uint16_t)1 << 6 : 0;  // SMTH
+    ret |= ((battDataBuf[4] & 0x08) == 0x08) ? (uint16_t)1 << 12 : 0; // SS
+    ret |= ((battDataBuf[4] & 0x10) == 0x10) ? (uint16_t)1 << 13 : 0; // PF
+    ret |= ((battDataBuf[4] & 0x20) == 0x20) ? (uint16_t)1 << 15 : 0; // XDSG
+    ret |= ((battDataBuf[4] & 0x40) == 0x40) ? (uint16_t)1 << 14 : 0; // XCHG
+    ret |= ((battDataBuf[6] & 0x10) == 0x10) ? (uint16_t)1 << 7 : 0;  // CB
+    battCmd[2] = 0x55;                                                // ChargingStatus MAC Cmd
+    bq_MACReadBlock(battCmd, 3, battDataBuf, 6);
+    ret |= ((battDataBuf[3] & 0x10) == 0x10) ? (uint16_t)1 << 4 : 0; // IN
+    ret |= ((battDataBuf[3] & 0x20) == 0x20) ? (uint16_t)1 << 5 : 0; // SU
+    ret |= ((battDataBuf[3] & 0x80) == 0x80) ? (uint16_t)1 << 8 : 0; // VCT
+    ret |= ((battDataBuf[4] & 0x80) == 0x80) ? (uint16_t)1 << 9 : 0; // TAPR
+    battCmd[2] = 0x56;                                               // GaugingStatus MAC Cmd
+    bq_MACReadBlock(battCmd, 3, battDataBuf, 5);
+    ret |= ((battDataBuf[3] & 0x01) == 0x01) ? (uint16_t)1 << 10 : 0; // FD
+    ret |= ((battDataBuf[3] & 0x02) == 0x02) ? (uint16_t)1 << 11 : 0; // FC
+    ret |= ((battDataBuf[4] & 0x04) == 0x04) ? (uint16_t)1 << 2 : 0;  // FCCX
+    ret |= ((battDataBuf[4] & 0x20) == 0x20) ? (uint16_t)1 << 0 : 0;  // EDV1
+    ret |= ((battDataBuf[4] & 0x40) == 0x40) ? (uint16_t)1 << 1 : 0;  // EDV2
+    ret |= ((battDataBuf[4] & 0x80) == 0x80) ? (uint16_t)1 << 3 : 0;  // VDQ
+
+    return ret;
+}
+void bq_GetLifetimeBlock(uint8_t blockNo, uint8_t *blockBuf)
+{
+    uint8_t blockBufLen = 3, battCmd[4] = {0x44, 0x02, 0x60, 0x00}; // LifetimeDataBlockN MAC Cmd
+    battCmd[2] += (blockNo - 1);
+    switch (blockNo)
+    {
+    case 1:
+    case 4:
+        blockBufLen += 32;
+        break;
+    case 2:
+        blockBufLen += 8;
+        break;
+    case 3:
+        blockBufLen += 16;
+        break;
+    case 5:
+        blockBufLen += 20;
+        break;
+    default:
+        return;
+    }
+    bq_MACReadBlock(battCmd, 3, blockBuf, blockBufLen);
+}
+
+uint16_t bq_GetVoltage()
+{ // Unit: mV
+    uint8_t battreadcmd[] = {};
+    uint8_t battBuf[2];
+    uint16_t battVolt;
+    ESP_ERROR_CHECK(bq4050_register_read(0x09, battBuf, 2));
+    battVolt = (battBuf[1] << 8) + battBuf[0];
+    return battVolt;
+}
+int16_t bq_GetCurrent()
+{ // Unit: mA
+    uint8_t battBuf[2];
+    int16_t battCurrent;
+    ESP_ERROR_CHECK(bq4050_register_read(0x0A, battBuf, 2));
+    *((uint8_t *)&battCurrent) = battBuf[0];
+    *((uint8_t *)(&battCurrent) + 1) = battBuf[1];
+    battCurrent = uint8_t(battBuf[0] << 8) & battBuf[1];
+    return battCurrent;
+}
+
+uint8_t bq_GetRSOC()
+{ // Unit: %
+    uint8_t battBuf[2];
+    ESP_ERROR_CHECK(bq4050_register_read(0x0D, battBuf, 2));
+    return battBuf[0];
+}
+
+uint16_t bq_GetT2E()
+{ // Unit: min
+    uint8_t battBuf[2];
+    uint16_t battT2E;
+    ESP_ERROR_CHECK(bq4050_register_read(0x12, battBuf, 2));
+    battT2E = (battBuf[1] << 8) + battBuf[0];
+    return battT2E;
+}
+
+uint8_t *bq_GetT2E_Array()
+{ // Unit: min
+    uint8_t battBuf[2];
+    ESP_ERROR_CHECK(bq4050_register_read(0x12, battBuf, 2));
+    return battBuf;
+}
+
+uint16_t bq_GetT2F()
+{ // Unit: min
+    uint8_t battBuf[2];
+    uint16_t battT2F;
+    ESP_ERROR_CHECK(bq4050_register_read(0x13, battBuf, 2));
+    battT2F = (battBuf[1] << 8) + battBuf[0];
+    return battT2F;
+}
+
+uint16_t bq_GetPackTemp()
+{ // Unit: 0.1K
+    uint8_t battBuf[2];
+    uint16_t battPackTemp;
+    ESP_ERROR_CHECK(bq4050_register_read(0x08, battBuf, 2));
+    battPackTemp = (battBuf[1] << 8) + battBuf[0];
+    return battPackTemp;
+}
+
+uint8_t bq_GetMaxErr()
+{ // Unit: %
+    uint8_t battBuf[2];
+    ESP_ERROR_CHECK(bq4050_register_read(0x0C, battBuf, 2));
+    return battBuf[0];
+}
+
+uint8_t bq_GetHealth()
+{ // Unit: %
+    uint8_t battBuf[2];
+    uint16_t battFCC, battDC;
+    float battHealth;
+    ESP_ERROR_CHECK(bq4050_register_read(0x10, battBuf, 2));
+    battFCC = (battBuf[1] << 8) + battBuf[0];
+    ESP_ERROR_CHECK(bq4050_register_read(0x18, battBuf, 2));
+    battDC = (battBuf[1] << 8) + battBuf[0];
+    battHealth = ((float)battFCC * 100.0f / (float)battDC);
+    return (battHealth >= 100.0f ? 100 : (uint8_t)battHealth);
+}
+uint8_t *bq_GetHealth_Pointer()
+{ // Unit: %
+    uint8_t battBuf[2];
+    uint16_t battFCC, battDC;
+    uint8_t battHealth;
+    ESP_ERROR_CHECK(bq4050_register_read(0x10, battBuf, 2));
+    battFCC = (battBuf[1] << 8) + battBuf[0];
+    ESP_ERROR_CHECK(bq4050_register_read(0x18, battBuf, 2));
+    battDC = (battBuf[1] << 8) + battBuf[0];
+    battHealth = ((float)battFCC * 100.0f / (float)battDC);
+    battHealth = battHealth >= 100 ? 100 : battHealth;
+    return &battHealth;
+}
+
+uint16_t bq_GetCellVolt(uint8_t cellNo)
+{ // Unit: mV
+    uint8_t battBuf[2], cmd = 0x40;
+    uint16_t battCellVolt;
+    if (cellNo > 4 || cellNo < 1)
+        return 0;
+    cmd -= cellNo;
+    ESP_ERROR_CHECK(bq4050_register_read(cmd, battBuf, 2));
+    battCellVolt = (battBuf[1] << 8) + battBuf[0];
+    return battCellVolt;
+}
+
+uint16_t bq_GetCycleCnt()
+{
+    uint8_t battBuf[2];
+    uint16_t battCycleCnt;
+    ESP_ERROR_CHECK(bq4050_register_read(0x17, battBuf, 2));
+    battCycleCnt = (battBuf[1] << 8) + battBuf[0];
+    return battCycleCnt;
+}
+
+#ifdef __SK_BQ4050_USB_HID__
+uint16_t bq_BattState_u16(bool ac_plugged)
+{
+    uint16_t ret = 0;
+    uint8_t battStatus[2];
+    ESP_ERROR_CHECK(bq4050_register_read(0x16, battStatus, 2));
+    ret |= ((battStatus[0] & 0x40) ? 0x00 : 1 << PRESENTSTATUS_CHARGING);
+    ret |= ((battStatus[0] & 0x20) ? 0x00 : 1 << PRESENTSTATUS_FULLCHARGE);
+    ret |= ((battStatus[0] & 0x10) ? 0x00 : 1 << PRESENTSTATUS_FULLDISCHARGE);
+    ret |= ((ac_plugged) ? 0x00 : 1 << PRESENTSTATUS_ACPRESENT);
+}
+#endif
+
+#endif
+
 // Physical parameters
 const uint16_t iConfigVoltage = 1380;
 uint16_t iVoltage = 1300, iPrevVoltage = 0;
@@ -103,37 +384,6 @@ unsigned char bRechargable = 1;
 unsigned char bCapacityMode = 2; // units are in %%
 
 uint16_t iPresentStatus = 0, iPreviousStatus = 0;
-
-// typedef struct
-// {
-//     tusb_desc_device_t *descriptor;   //    设备描述符结构体
-//     const char **string_descriptor;   //    字符串描述符
-//     const uint8_t *config_descriptor; //    配置描述符数组
-//     bool external_phy;                //    外部PHY，一般为false
-// } tinyusb_config_t;
-
-// typedef struct TU_ATTR_PACKED
-// {
-//     uint8_t bLength;         //    设备描述符的字节数大小
-//     uint8_t bDescriptorType; //    描述符类型，设备描述符为0x01
-//     uint16_t bcdUSB;         //    USB版本号
-
-//     uint8_t bDeviceClass;    //    USB分配的设备类代码，0x01~0xfe为标准设备类，0xff为厂商自定义类型
-//     uint8_t bDeviceSubClass; //    USB分配的子类代码
-//     uint8_t bDeviceProtocol; //    USB分配的设备协议代码
-//     uint8_t bMaxPacketSize0; //    端点0的最大信息包大小
-
-//     uint16_t idVendor;  //    制造商ID
-//     uint16_t idProduct; //    产品ID
-
-//     uint16_t bcdDevice; //    设备出厂编号
-
-//     uint8_t iManufacturer; //    制造商的字符串描述符索引
-//     uint8_t iProduct;      //    产品的字符串描述符索引
-//     uint8_t iSerialNumber; //    设备序列号的字符串描述符索引
-
-//     uint8_t bNumConfigurations; //    可能的配置数量
-// } tusb_desc_device_t;
 
 tusb_desc_device_t descriptor_config = {
     .bLength = sizeof(descriptor_config),
@@ -389,7 +639,11 @@ extern "C" void app_main()
 
     while (1)
     {
+#ifdef __BQ4050__ENABLE__
+#else
+#endif
         ESP_LOGI(TAG, "still on");
+        tud_hid_report(HID_PD_REMAININGCAPACITY, &iRemaining, sizeof(iRemaining));
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
@@ -516,20 +770,6 @@ uint8_t const *tud_hid_descriptor_report_cb(uint8_t instance)
 
 void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const *buffer, uint16_t bufsize)
 {
-    // switch (int(report_type))
-    // {
-    // case HID_REPORT_TYPE_FEATURE:
-    // {
-    //     switch (report_id)
-    //     {
-    //     case HID_PD_REMNCAPACITYLIMIT:
-    //     {
-    //         buffer + 0 = iRemnCapacityLimit;
-    //         return;
-    //     }
-    //     }
-    // }
-    // }
     ESP_LOGI(TAG, "Get_report Request: %d, type=%s , id: %d , len:%d\n",
              instance,
              (report_type == HID_REPORT_TYPE_INVALID ? "HID_REPORT_TYPE_INVALID" : (report_type == HID_REPORT_TYPE_INPUT ? "HID_REPORT_TYPE_INPUT" : (report_type == HID_REPORT_TYPE_OUTPUT ? "HID_REPORT_TYPE_OUTPUT" : "HID_REPORT_TYPE_FEATURE"))),
