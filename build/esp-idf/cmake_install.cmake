@@ -427,3 +427,18 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/main/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/esp32ups_hid/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/bq4050/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/SK_BQ4050_HID/cmake_install.cmake")
+endif()
+

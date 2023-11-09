@@ -66,3 +66,6 @@ C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/espressif__esp
 C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/espressif__tinyusb/libespressif__tinyusb.a
 C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/espressif__esp_tinyusb/libespressif__esp_tinyusb.a
 C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/main/libmain.a
+C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/esp32ups_hid/libesp32ups_hid.a
+C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/bq4050/libbq4050.a
+C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/SK_BQ4050_HID/libSK_BQ4050_HID.a
