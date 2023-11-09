@@ -20,9 +20,7 @@
 #include "esp_log.h"
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
-#include "bq4050.h"
 #include "esp32ups_hid.h"
-#include "SK_BQ4050_HID.h"
 #include "gpio_cxx.hpp"
 #include <thread>
 
@@ -57,30 +55,25 @@ uint8_t BatteryRunTimeToFull = 0;
 uint16_t BatteryPrevStatus = 0;
 uint8_t BatteryPrevCapacity = 0;
 #else
-// Physical parameters
-const uint16_t iConfigVoltage = 1380;
-uint16_t iVoltage = 1300, iPrevVoltage = 0;
-uint16_t iRunTimeToEmpty = 0, iPrevRunTimeToEmpty = 0;
-uint16_t iAvgTimeToFull = 7200;
-uint16_t iAvgTimeToEmpty = 7200;
-uint16_t iRemainTimeLimit = 600;
-int16_t iDelayBe4Reboot = -1;
-int16_t iDelayBe4ShutDown = -1;
-uint16_t IMANUFACTURERDATE = 100; // Parameters for ACPI compliancy
-const unsigned char iDesignCapacity = 100;
-unsigned char iWarnCapacityLimit = 10; // warning at 10%
-unsigned char iRemnCapacityLimit = 5;  // low at 5%
-const unsigned char bCapacityGranularity1 = 1;
-const unsigned char bCapacityGranularity2 = 1;
-unsigned char iFullChargeCapacity = 100;
-
-unsigned char iRemaining = 70, iPrevRemaining = 0;
-
-int iRes = 0;
-
-const unsigned char bDeviceChemistry = IDEVICECHEMISTRY;
-const unsigned char bOEMVendor = IOEMVENDOR;
-uint16_t iPresentStatus = 0, iPreviousStatus = 0;
+// 固定参数
+uint16_t BatteryVoltage = 7000;
+const unsigned char BatteryDeviceChemistry = IDEVICECHEMISTRY;
+const unsigned char BatteryOEMVendor = IOEMVENDOR;
+uint16_t ManufactureDate = 100;
+const unsigned char BatteryDesignCapacity = 100;
+const unsigned char BatteryFullChargeCapacity = 100;
+unsigned char BatteryWarnCapacityLimit = 10;
+unsigned char BatteryRemnCapacityLimit = 5;
+unsigned char BatteryCapacityGranularity1 = 1;
+unsigned char BatteryCapacityGranularity2 = 1;
+// 实时参数
+uint16_t BatteryCurrentStatus = 0;
+uint8_t BatteryCurrentCapacity = 70;
+uint8_t BatteryRunTimeToEmpty = 1000;
+uint8_t BatteryRunTimeToFull = 1000;
+// 上一个参数
+uint16_t BatteryPrevStatus = 0;
+uint8_t BatteryPrevCapacity = 70;
 #endif
 
 static const char *TAG = "SKele-DC";
@@ -126,6 +119,7 @@ uint8_t const desc_configuration[] = {
     //    接口描述符、HID描述符、端点描述符
     TUD_HID_INOUT_DESCRIPTOR(1, 0x04, 0, sizeof(ESP32UPS::desc_hid_report), 0x01, 0x81, 64, 10)};
 
+#ifdef __SK_BQ4050_HID__
 static esp_err_t i2c_master_init()
 {
     i2c_config_t conf = {
@@ -145,11 +139,36 @@ static esp_err_t i2c_master_init()
 
     return i2c_driver_install(I2C_MASTER_NUM, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
 }
+#else
+uint16_t BattState_u16(bool charging)
+{
+    uint16_t ret = 0;
+    if (charging)
+    {
+        ret |= 1 << PRESENTSTATUS_ACPRESENT;
+        ret |= 1 << PRESENTSTATUS_CHARGING;
+        ret |= ((BatteryCurrentCapacity == 100) ? 1 << PRESENTSTATUS_FULLCHARGE : 0x00);
+    }
+    else
+    {
+        ret |= 1 << PRESENTSTATUS_DISCHARGING;
+        ret |= ((BatteryCurrentCapacity == 0) ? 1 << PRESENTSTATUS_FULLDISCHARGE : 0x00);
+    }
+    if (BatteryCurrentCapacity < 5)
+    {
+        ret |= 1 << PRESENTSTATUS_SHUTDOWNREQ;
+    }
+    if (BatteryCurrentCapacity <= 2)
+    {
+        ret |= 1 << PRESENTSTATUS_SHUTDOWNIMNT;
+    }
+    ret |= 1 << PRESENTSTATUS_BATTPRESENT;
+    return ret;
+}
+#endif
 
 extern "C" void app_main()
 {
-    const GPIO_Output ChargingLED(GPIONum(37));
-    const GPIO_Output PowerlossLED(GPIONum(36));
     ESP_LOGI(TAG, "USB initialization");
     const tinyusb_config_t tusb_cfg = {
         .device_descriptor = &descriptor_config,
@@ -164,12 +183,17 @@ extern "C" void app_main()
     ESP_LOGI(TAG, "USB initialization DONE");
     ESP_LOGI(TAG, "initialization DONE!\n:)");
 #ifdef __SK_BQ4050_HID__
+    const GPIO_Output ChargingLED(GPIONum(37));
+    const GPIO_Output PowerlossLED(GPIONum(36));
     ESP_ERROR_CHECK(i2c_master_init());
     BatteryVoltage = bq_GetVoltage();
     BatteryCurrentCapacity = bq_GetRSOC();
     BatteryRunTimeToEmpty = bq_GetT2E();
     BatteryRunTimeToFull = bq_GetT2F();
 #else
+    const GPIOInput persentup(GPIONum(40));
+    const GPIOInput persentdown(GPIONum(41));
+    const GPIOInput charging(GPIONum(42));
 #endif
 
     while (1)
@@ -197,6 +221,33 @@ extern "C" void app_main()
             ChargingLED.set_low();
         ESP_LOGI(TAG, "Battery Current Capacity :%d\nBattery Current Status :%d\nBattery RunTime To Empty :%d\n", BatteryCurrentCapacity, BatteryCurrentStatus, BatteryRunTimeToEmpty);
 #else
+        if (persentup.get_level() == GPIOLevel::HIGH)
+        {
+            BatteryCurrentCapacity++;
+        }
+        if (persentdown.get_level() == GPIOLevel::HIGH)
+        {
+            BatteryCurrentCapacity--;
+        }
+        if (charging.get_level() == GPIOLevel::HIGH)
+        {
+            BatteryCurrentStatus = BattState_u16(true);
+        }
+        else
+        {
+            BatteryCurrentStatus = BattState_u16(false);
+        }
+        if ((BatteryCurrentCapacity != BatteryPrevCapacity) || (BatteryCurrentStatus != BatteryPrevStatus))
+        {
+            tud_hid_report(HID_PD_REMAININGCAPACITY, &BatteryCurrentCapacity, sizeof(BatteryCurrentCapacity));
+            tud_hid_report(HID_PD_PRESENTSTATUS, &BatteryCurrentStatus, sizeof(BatteryCurrentStatus));
+            if (BatteryCurrentStatus & (1 << PRESENTSTATUS_DISCHARGING))
+                tud_hid_report(HID_PD_RUNTIMETOEMPTY, &BatteryRunTimeToEmpty, sizeof(BatteryRunTimeToEmpty));
+            BatteryPrevCapacity = BatteryCurrentCapacity;
+            BatteryPrevStatus = BatteryCurrentStatus;
+        }
+        ESP_LOGI(TAG, "persentup.get_level() :%d\npersentdown.get_level() :%d\ncharging.get_level() :%d\n", int(persentup.get_level()), int(persentdown.get_level()), int(charging.get_level()));
+        ESP_LOGI(TAG, "Battery Current Capacity :%d\nBattery Current Status :%d\n", BatteryCurrentCapacity, BatteryCurrentStatus);
 #endif
         vTaskDelay(2000 / portTICK_PERIOD_MS);
     }
@@ -218,6 +269,9 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
             buffer[1] = BatteryCurrentStatus >> 8 & 0x00ff;
             return 2;
 #else
+            buffer[0] = BatteryCurrentStatus & 0x00ff;
+            buffer[1] = BatteryCurrentStatus >> 8 & 0x00ff;
+            return 2;
 #endif
         }
         case HID_PD_VOLTAGE:
@@ -228,6 +282,9 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
             buffer[1] = BatteryVoltage >> 8 & 0x00ff;
             return 2;
 #else
+            buffer[0] = BatteryVoltage & 0x00ff;
+            buffer[1] = BatteryVoltage >> 8 & 0x00ff;
+            return 2;
 #endif
         }
         case HID_PD_DESIGNCAPACITY:
@@ -290,6 +347,8 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
             buffer[0] = BatteryCurrentCapacity;
             return 1;
 #else
+            buffer[0] = BatteryCurrentCapacity;
+            return 1;
 #endif
         }
         case HID_PD_RUNTIMETOEMPTY:
@@ -301,6 +360,9 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
             buffer[1] = BatteryRunTimeToEmpty >> 8 & 0x00ff;
             return 2;
 #else
+            buffer[0] = BatteryRunTimeToEmpty & 0x00ff;
+            buffer[1] = BatteryRunTimeToEmpty >> 8 & 0x00ff;
+            return 2;
 #endif
         }
         case HID_PD_CPCTYGRANULARITY1:

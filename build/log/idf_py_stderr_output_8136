@@ -1,0 +1,9 @@
+hint: core.useBuiltinFSMonitor=true is deprecated;please set core.fsmonitor=true instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+Compiler supported targets: xtensa-esp32s3-elf
+
+hint: core.useBuiltinFSMonitor=true is deprecated;please set core.fsmonitor=true instead
+hint: Disable this message with "git config advice.useCoreFSMonitorConfig false"
+Compiler supported targets: xtensa-esp32s3-elf
+
+Server running, waiting for requests on stdin...
