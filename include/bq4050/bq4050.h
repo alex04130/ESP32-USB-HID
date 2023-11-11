@@ -26,7 +26,6 @@ uint8_t bq_GetMaxErr();                  // Unit: %
 uint8_t bq_GetHealth();                  // Unit: %
 uint16_t bq_GetCellVolt(uint8_t cellNo); // Unit: mV
 uint16_t bq_GetCycleCnt();
-uint8_t *bq_GetHealth_Pointer();
 esp_err_t bq4050_register_read(uint8_t reg_addr, uint8_t *data, size_t len);
 esp_err_t bq4050_register_write(uint8_t *data, size_t len);
 

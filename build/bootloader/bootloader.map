@@ -82,53 +82,53 @@ esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
                               esp-idf/hal/libhal.a(cache_hal.c.obj) (Cache_Suspend_ICache)
 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
                               esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj) (cache_writeback_items_freeze)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
                               esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj) (__ashldi3)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
                               esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj) (__lshrdi3)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
                               esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj) (__popcountsi2)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
                               esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj) (__divdi3)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
                               esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj) (__udivdi3)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
                               esp-idf/main/libmain.a(bootloader_start.c.obj) (_global_impure_ptr)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
                               esp-idf/bootloader_support/libbootloader_support.a(flash_partitions.c.obj) (memcmp)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
                               esp-idf/bootloader_support/libbootloader_support.a(bootloader_utility.c.obj) (memcpy)
-c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
                               esp-idf/main/libmain.a(bootloader_start.c.obj) (memset)
 
 Discarded input sections
 
- .literal       0x0000000000000000        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .text          0x0000000000000000        0x6 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .debug_line    0x0000000000000000       0x50 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .literal       0x0000000000000000        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .text          0x0000000000000000        0x6 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .debug_line    0x0000000000000000       0x50 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
  .debug_line_str
-                0x0000000000000000       0xf4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .debug_info    0x0000000000000000       0x24 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .debug_abbrev  0x0000000000000000       0x14 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+                0x0000000000000000       0xf4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .debug_info    0x0000000000000000       0x24 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .debug_abbrev  0x0000000000000000       0x14 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .debug_str     0x0000000000000000      0x102 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .text          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
- .literal       0x0000000000000000       0x44 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
- .fini.literal  0x0000000000000000        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
- .init.literal  0x0000000000000000        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
- .text          0x0000000000000000       0xa2 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
- .bss           0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
- .eh_frame      0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .debug_str     0x0000000000000000      0x102 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .text          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+ .literal       0x0000000000000000       0x44 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .fini.literal  0x0000000000000000        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .init.literal  0x0000000000000000        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .text          0x0000000000000000       0xa2 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .bss           0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .eh_frame      0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
  .tm_clone_table
-                0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
- .fini          0x0000000000000000        0x6 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
- .init          0x0000000000000000        0x6 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+                0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .fini          0x0000000000000000        0x6 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .init          0x0000000000000000        0x6 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
  .text          0x0000000000000000        0x0 CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj
@@ -1120,8 +1120,8 @@ Discarded input sections
  .debug_abbrev  0x0000000000000000      0x119 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
  .debug_aranges
                 0x0000000000000000       0x18 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
- .debug_line    0x0000000000000000      0x22e esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
- .debug_str     0x0000000000000000     0x2dd2 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
+ .debug_line    0x0000000000000000      0x256 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
+ .debug_str     0x0000000000000000     0x2dd4 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/efuse/libefuse.a(esp_efuse_table.c.obj)
  .literal.esp_efuse_get_pkg_ver
                 0x0000000000000000        0x8 esp-idf/efuse/libefuse.a(esp_efuse_fields.c.obj)
@@ -1149,8 +1149,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x38 esp-idf/efuse/libefuse.a(esp_efuse_fields.c.obj)
  .debug_ranges  0x0000000000000000       0x28 esp-idf/efuse/libefuse.a(esp_efuse_fields.c.obj)
- .debug_line    0x0000000000000000      0x481 esp-idf/efuse/libefuse.a(esp_efuse_fields.c.obj)
- .debug_str     0x0000000000000000      0x5d0 esp-idf/efuse/libefuse.a(esp_efuse_fields.c.obj)
+ .debug_line    0x0000000000000000      0x4b9 esp-idf/efuse/libefuse.a(esp_efuse_fields.c.obj)
+ .debug_str     0x0000000000000000      0x5d2 esp-idf/efuse/libefuse.a(esp_efuse_fields.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/efuse/libefuse.a(esp_efuse_fields.c.obj)
  .literal.esp_efuse_read_field_blob
                 0x0000000000000000       0x14 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
@@ -1238,8 +1238,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x90 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
  .debug_ranges  0x0000000000000000       0x98 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
- .debug_line    0x0000000000000000     0x1073 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
- .debug_str     0x0000000000000000      0x7cf esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
+ .debug_line    0x0000000000000000     0x10cb esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
+ .debug_str     0x0000000000000000      0x7d1 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
  .literal.write_reg
                 0x0000000000000000       0x1c esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
@@ -1349,8 +1349,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0xa8 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .debug_ranges  0x0000000000000000      0x2c0 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
- .debug_line    0x0000000000000000     0x18ad esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
- .debug_str     0x0000000000000000      0xa26 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+ .debug_line    0x0000000000000000     0x1905 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+ .debug_str     0x0000000000000000      0xa28 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .literal.esp_efuse_block_is_empty
                 0x0000000000000000        0x4 esp-idf/efuse/libefuse.a(esp_efuse_api_key.c.obj)
@@ -1486,8 +1486,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0xe0 esp-idf/efuse/libefuse.a(esp_efuse_api_key.c.obj)
  .debug_ranges  0x0000000000000000      0x168 esp-idf/efuse/libefuse.a(esp_efuse_api_key.c.obj)
- .debug_line    0x0000000000000000     0x159f esp-idf/efuse/libefuse.a(esp_efuse_api_key.c.obj)
- .debug_str     0x0000000000000000     0x1068 esp-idf/efuse/libefuse.a(esp_efuse_api_key.c.obj)
+ .debug_line    0x0000000000000000     0x15f7 esp-idf/efuse/libefuse.a(esp_efuse_api_key.c.obj)
+ .debug_str     0x0000000000000000     0x106a esp-idf/efuse/libefuse.a(esp_efuse_api_key.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/efuse/libefuse.a(esp_efuse_api_key.c.obj)
  .literal.esp_efuse_utility_clear_program_registers
                 0x0000000000000000        0x8 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
@@ -1523,8 +1523,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x38 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .debug_ranges  0x0000000000000000      0x110 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
- .debug_line    0x0000000000000000      0xdb4 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
- .debug_str     0x0000000000000000      0x750 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+ .debug_line    0x0000000000000000      0xe1c esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
+ .debug_str     0x0000000000000000      0x752 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
  .text          0x0000000000000000        0x0 esp-idf/esp_hw_support/libesp_hw_support.a(cpu_region_protect.c.obj)
  .data          0x0000000000000000        0x0 esp-idf/esp_hw_support/libesp_hw_support.a(cpu_region_protect.c.obj)
@@ -1647,8 +1647,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x40 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_sleep.c.obj)
  .debug_ranges  0x0000000000000000       0x30 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_sleep.c.obj)
- .debug_line    0x0000000000000000      0xf4e esp-idf/esp_hw_support/libesp_hw_support.a(rtc_sleep.c.obj)
- .debug_str     0x0000000000000000      0x609 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_sleep.c.obj)
+ .debug_line    0x0000000000000000      0xf7e esp-idf/esp_hw_support/libesp_hw_support.a(rtc_sleep.c.obj)
+ .debug_str     0x0000000000000000      0x60b esp-idf/esp_hw_support/libesp_hw_support.a(rtc_sleep.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_sleep.c.obj)
  .literal.rtc_clk_cal_internal
                 0x0000000000000000       0x44 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
@@ -1690,8 +1690,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x58 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
  .debug_ranges  0x0000000000000000      0x198 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
- .debug_line    0x0000000000000000      0xdef esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
- .debug_str     0x0000000000000000      0x638 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
+ .debug_line    0x0000000000000000      0xe1f esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
+ .debug_str     0x0000000000000000      0x63a esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
  .iram1.0.literal
                 0x0000000000000000        0x8 esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
@@ -1861,159 +1861,159 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x48 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
  .debug_ranges  0x0000000000000000       0x38 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
- .debug_line    0x0000000000000000      0x698 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
- .debug_str     0x0000000000000000      0x492 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
+ .debug_line    0x0000000000000000      0x6b8 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
+ .debug_str     0x0000000000000000      0x494 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
  .comment       0x0000000000000000       0x30 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
  .literal       0x0000000000000000       0x10 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
  .text          0x0000000000000000       0x56 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
  .data          0x0000000000000000        0x0 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
  .bss           0x0000000000000000        0x0 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
- .debug_line    0x0000000000000000      0x156 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
+ .debug_line    0x0000000000000000      0x15e esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
  .debug_info    0x0000000000000000       0x2e esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
  .debug_abbrev  0x0000000000000000       0x21 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
  .debug_aranges
                 0x0000000000000000       0x20 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
- .debug_str     0x0000000000000000       0xce esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
- .text          0x0000000000000000       0x18 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
- .debug_line    0x0000000000000000       0x7b c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .debug_str     0x0000000000000000       0xd0 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
+ .text          0x0000000000000000       0x18 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .debug_line    0x0000000000000000       0x7b c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
  .debug_line_str
-                0x0000000000000000       0xfa c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
- .debug_info    0x0000000000000000       0x2f c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
- .debug_abbrev  0x0000000000000000       0x21 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+                0x0000000000000000       0xfa c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .debug_info    0x0000000000000000       0x2f c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .debug_abbrev  0x0000000000000000       0x21 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
- .debug_str     0x0000000000000000      0x112 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
- .text          0x0000000000000000       0x18 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
- .debug_line    0x0000000000000000       0x7b c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .debug_str     0x0000000000000000      0x112 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .text          0x0000000000000000       0x18 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .debug_line    0x0000000000000000       0x7b c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
  .debug_line_str
-                0x0000000000000000       0xfa c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
- .debug_info    0x0000000000000000       0x2f c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
- .debug_abbrev  0x0000000000000000       0x21 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+                0x0000000000000000       0xfa c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .debug_info    0x0000000000000000       0x2f c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .debug_abbrev  0x0000000000000000       0x21 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
- .debug_str     0x0000000000000000      0x112 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
- .literal       0x0000000000000000        0xc c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .text          0x0000000000000000       0x37 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .debug_frame   0x0000000000000000       0x28 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .debug_info    0x0000000000000000       0xce c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .debug_abbrev  0x0000000000000000       0x68 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .debug_str     0x0000000000000000      0x112 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .literal       0x0000000000000000        0xc c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .text          0x0000000000000000       0x37 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .debug_frame   0x0000000000000000       0x28 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .debug_info    0x0000000000000000       0xce c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .debug_abbrev  0x0000000000000000       0x68 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
  .debug_loclists
-                0x0000000000000000       0xac c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+                0x0000000000000000       0xac c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .debug_line    0x0000000000000000       0xf7 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .debug_str     0x0000000000000000      0x144 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .debug_line    0x0000000000000000       0xf7 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .debug_str     0x0000000000000000      0x144 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
  .debug_line_str
-                0x0000000000000000      0x1e8 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .comment       0x0000000000000000       0x30 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .text          0x0000000000000000      0x2ae c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .debug_frame   0x0000000000000000       0x28 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .eh_frame      0x0000000000000000       0x28 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .debug_info    0x0000000000000000      0x6bf c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .debug_abbrev  0x0000000000000000      0x1ab c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+                0x0000000000000000      0x1e8 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .comment       0x0000000000000000       0x30 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .text          0x0000000000000000      0x2ae c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .debug_frame   0x0000000000000000       0x28 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .eh_frame      0x0000000000000000       0x28 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .debug_info    0x0000000000000000      0x6bf c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .debug_abbrev  0x0000000000000000      0x1ab c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
  .debug_loclists
-                0x0000000000000000      0x5e6 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+                0x0000000000000000      0x5e6 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
  .debug_rnglists
-                0x0000000000000000       0x4c c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .debug_line    0x0000000000000000      0x884 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .debug_str     0x0000000000000000      0x1b9 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+                0x0000000000000000       0x4c c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .debug_line    0x0000000000000000      0x884 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .debug_str     0x0000000000000000      0x1b9 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
  .debug_line_str
-                0x0000000000000000      0x1e8 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .comment       0x0000000000000000       0x30 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .text          0x0000000000000000      0x270 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .debug_frame   0x0000000000000000       0x28 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .eh_frame      0x0000000000000000       0x28 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .debug_info    0x0000000000000000      0x685 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .debug_abbrev  0x0000000000000000      0x18f c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+                0x0000000000000000      0x1e8 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .comment       0x0000000000000000       0x30 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .text          0x0000000000000000      0x270 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .debug_frame   0x0000000000000000       0x28 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .eh_frame      0x0000000000000000       0x28 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .debug_info    0x0000000000000000      0x685 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x0000000000000000      0x18f c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
  .debug_loclists
-                0x0000000000000000      0x5f4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+                0x0000000000000000      0x5f4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
  .debug_rnglists
-                0x0000000000000000       0x4c c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .debug_line    0x0000000000000000      0x7a7 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .debug_str     0x0000000000000000      0x1ba c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+                0x0000000000000000       0x4c c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .debug_line    0x0000000000000000      0x7a7 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .debug_str     0x0000000000000000      0x1ba c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
  .debug_line_str
-                0x0000000000000000      0x1e8 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .comment       0x0000000000000000       0x30 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .text          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .bss           0x0000000000000000        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .debug_info    0x0000000000000000      0x80e c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .debug_abbrev  0x0000000000000000      0x173 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+                0x0000000000000000      0x1e8 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .comment       0x0000000000000000       0x30 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .text          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .bss           0x0000000000000000        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .debug_info    0x0000000000000000      0x80e c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .debug_abbrev  0x0000000000000000      0x173 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
  .debug_aranges
-                0x0000000000000000       0x18 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .debug_line    0x0000000000000000       0x51 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .debug_str     0x0000000000000000      0x49a c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+                0x0000000000000000       0x18 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .debug_line    0x0000000000000000       0x51 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .debug_str     0x0000000000000000      0x49a c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
  .debug_line_str
-                0x0000000000000000      0x303 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .comment       0x0000000000000000       0x30 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .literal       0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .text          0x0000000000000000       0x4f c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .debug_frame   0x0000000000000000       0x28 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .debug_info    0x0000000000000000      0x12b c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .debug_abbrev  0x0000000000000000       0x90 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+                0x0000000000000000      0x303 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .comment       0x0000000000000000       0x30 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .literal       0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .text          0x0000000000000000       0x4f c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x0000000000000000       0x28 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .debug_info    0x0000000000000000      0x12b c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x0000000000000000       0x90 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
  .debug_loclists
-                0x0000000000000000      0x120 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+                0x0000000000000000      0x120 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .debug_line    0x0000000000000000      0x177 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .debug_str     0x0000000000000000       0xe0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .debug_line    0x0000000000000000      0x177 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .debug_str     0x0000000000000000       0xe0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
  .debug_line_str
-                0x0000000000000000      0x2fd c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .comment       0x0000000000000000       0x30 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .literal       0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .text          0x0000000000000000      0x135 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .debug_line    0x0000000000000000      0x30f c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+                0x0000000000000000      0x2fd c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .comment       0x0000000000000000       0x30 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .literal       0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .text          0x0000000000000000      0x135 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .debug_line    0x0000000000000000      0x30f c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
  .debug_line_str
-                0x0000000000000000      0x10c c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .debug_info    0x0000000000000000       0x31 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .debug_abbrev  0x0000000000000000       0x21 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+                0x0000000000000000      0x10c c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .debug_info    0x0000000000000000       0x31 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x0000000000000000       0x21 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .debug_str     0x0000000000000000      0x121 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .literal       0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .text          0x0000000000000000       0x74 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .debug_line    0x0000000000000000      0x146 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .debug_str     0x0000000000000000      0x121 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .literal       0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .text          0x0000000000000000       0x74 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .debug_line    0x0000000000000000      0x146 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
  .debug_line_str
-                0x0000000000000000      0x10c c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .debug_info    0x0000000000000000       0x2f c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .debug_abbrev  0x0000000000000000       0x21 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+                0x0000000000000000      0x10c c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .debug_info    0x0000000000000000       0x2f c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .debug_abbrev  0x0000000000000000       0x21 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
  .debug_aranges
-                0x0000000000000000       0x20 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .debug_str     0x0000000000000000      0x121 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .literal       0x0000000000000000        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
- .init.literal  0x0000000000000000        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
- .text          0x0000000000000000       0x16 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
- .eh_frame      0x0000000000000000        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+                0x0000000000000000       0x20 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .debug_str     0x0000000000000000      0x121 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .literal       0x0000000000000000        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .init.literal  0x0000000000000000        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .text          0x0000000000000000       0x16 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .eh_frame      0x0000000000000000        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
  .tm_clone_table
-                0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
- .init          0x0000000000000000        0x6 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
- .text          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
- .data          0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
- .bss           0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
- .init          0x0000000000000000        0x2 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
- .fini          0x0000000000000000        0x2 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
+                0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .init          0x0000000000000000        0x6 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .text          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
+ .data          0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
+ .bss           0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
+ .init          0x0000000000000000        0x2 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
+ .fini          0x0000000000000000        0x2 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
 
 Memory Configuration
 
@@ -2025,9 +2025,9 @@ dram_seg         0x000000003fce3700 0x0000000000004000 rw
 
 Linker script and memory map
 
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
                 0x0000000000000000                IDF_TARGET_ESP32S3 = 0x0
 LOAD CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj
 LOAD esp-idf/xtensa/libxtensa.a
@@ -2096,14 +2096,14 @@ LOAD esp-idf/esp_hw_support/libesp_hw_support.a
 LOAD esp-idf/esp_common/libesp_common.a
 LOAD esp-idf/esp_rom/libesp_rom.a
 LOAD esp-idf/log/liblog.a
-LOAD C:/Users/13684/esp/esp-idf/components/xtensa/esp32s3/libxt_hal.a
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libnosys.a
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
-LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
+LOAD C:/Users/Administrator/esp/esp-idf/components/xtensa/esp32s3/libxt_hal.a
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libnosys.a
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+LOAD c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
                 0x000000004000057c                rtc_get_reset_reason = 0x4000057c
                 0x0000000040000588                analog_super_wdt_reset_happened = 0x40000588
                 0x0000000040000594                jtag_cpu_reset_happened = 0x40000594
@@ -5121,7 +5121,7 @@ LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xten
  *(.fini.literal)
  *(.fini)
  *fill*         0x00000000403cf5aa        0x2 
- .fini          0x00000000403cf5ac        0x3 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+ .fini          0x00000000403cf5ac        0x3 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
                 0x00000000403cf5ac                _fini
  *(.gnu.version)
                 0x00000000403cf5af                _loader_text_end = ABSOLUTE (.)
@@ -5131,7 +5131,7 @@ LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xten
  *(.entry.text)
  *(.init.literal)
  *(.init)
- .init          0x00000000403c9700        0x3 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+ .init          0x00000000403c9700        0x3 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
                 0x00000000403c9700                _init
 
 .dram0.bss      0x000000003fce3700      0x118
@@ -5310,18 +5310,18 @@ LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xten
  *fill*         0x000000003fce4ee7        0x1 
                 0x000000003fce4ee8                __init_array_start = ABSOLUTE (.)
  *crtbegin.*(.ctors)
- .ctors         0x000000003fce4ee8        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .ctors         0x000000003fce4ee8        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
  *(EXCLUDE_FILE(*crtend.*) .ctors)
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
- .ctors         0x000000003fce4eec        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .ctors         0x000000003fce4eec        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
                 0x000000003fce4ef0                __init_array_end = ABSOLUTE (.)
  *crtbegin.*(.dtors)
- .dtors         0x000000003fce4ef0        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .dtors         0x000000003fce4ef0        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
  *(EXCLUDE_FILE(*crtend.*) .dtors)
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
- .dtors         0x000000003fce4ef4        0x4 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .dtors         0x000000003fce4ef4        0x4 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
                 0x000000003fce4ef4                __DTOR_END__
                 0x000000003fce4ef8                __XT_EXCEPTION_DESCS_ = ABSOLUTE (.)
  *(.xt_except_desc)
@@ -5492,10 +5492,10 @@ LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xten
 
 .xt.prop        0x0000000000000000     0x2850
  *(.xt.prop .gnu.linkonce.prop.*)
- .xt.prop       0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .xt.prop       0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
                                          0x24 (size before relaxing)
- .xt.prop       0x0000000000000000       0x30 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
- .xt.prop       0x0000000000000030       0x18 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .xt.prop       0x0000000000000000       0x30 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+ .xt.prop       0x0000000000000030       0x18 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
                                         0x150 (size before relaxing)
  .xt.prop       0x0000000000000048       0x60 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
  .xt.prop       0x00000000000000a8       0x6c esp-idf/main/libmain.a(bootloader_start.c.obj)
@@ -5566,32 +5566,32 @@ LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xten
                                         0x1b0 (size before relaxing)
  .xt.prop       0x0000000000002838        0x0 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
                                          0x54 (size before relaxing)
- .xt.prop       0x0000000000002838        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .xt.prop       0x0000000000002838        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
                                          0x3c (size before relaxing)
- .xt.prop       0x0000000000002838        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .xt.prop       0x0000000000002838        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
                                          0x3c (size before relaxing)
- .xt.prop       0x0000000000002838        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .xt.prop       0x0000000000002838        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
                                          0x30 (size before relaxing)
- .xt.prop       0x0000000000002838        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .xt.prop       0x0000000000002838        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
                                         0x198 (size before relaxing)
- .xt.prop       0x0000000000002838        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .xt.prop       0x0000000000002838        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
                                         0x180 (size before relaxing)
- .xt.prop       0x0000000000002838        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .xt.prop       0x0000000000002838        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
                                          0x90 (size before relaxing)
- .xt.prop       0x0000000000002838        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .xt.prop       0x0000000000002838        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
                                         0x15c (size before relaxing)
- .xt.prop       0x0000000000002838        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .xt.prop       0x0000000000002838        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
                                          0xd8 (size before relaxing)
- .xt.prop       0x0000000000002838       0x18 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .xt.prop       0x0000000000002838       0x18 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
                                          0x84 (size before relaxing)
- .xt.prop       0x0000000000002850        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
+ .xt.prop       0x0000000000002850        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
                                          0x30 (size before relaxing)
 
 .xt.lit         0x0000000000000000      0x280
  *(.xt.lit .gnu.linkonce.p.*)
- .xt.lit        0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .xt.lit        0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
                                           0x8 (size before relaxing)
- .xt.lit        0x0000000000000000        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .xt.lit        0x0000000000000000        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
                                          0x18 (size before relaxing)
  .xt.lit        0x0000000000000000       0x10 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
  .xt.lit        0x0000000000000010        0x8 esp-idf/main/libmain.a(bootloader_start.c.obj)
@@ -5659,16 +5659,16 @@ LOAD c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xten
                                          0x30 (size before relaxing)
  .xt.lit        0x0000000000000280        0x0 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
                                           0x8 (size before relaxing)
- .xt.lit        0x0000000000000280        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .xt.lit        0x0000000000000280        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
                                           0x8 (size before relaxing)
- .xt.lit        0x0000000000000280        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .xt.lit        0x0000000000000280        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
                                          0x10 (size before relaxing)
 OUTPUT(bootloader.elf elf32-xtensa-le)
 
 .xtensa.info    0x0000000000000000       0x38
- .xtensa.info   0x0000000000000000       0x38 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .xtensa.info   0x0000000000000000       0x38 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
  .xtensa.info   0x0000000000000038        0x0 CMakeFiles/bootloader.elf.dir/project_elf_src_esp32s3.c.obj
  .xtensa.info   0x0000000000000038        0x0 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
  .xtensa.info   0x0000000000000038        0x0 esp-idf/main/libmain.a(bootloader_start.c.obj)
@@ -5711,20 +5711,20 @@ OUTPUT(bootloader.elf elf32-xtensa-le)
  .xtensa.info   0x0000000000000038        0x0 esp-idf/hal/libhal.a(cache_hal.c.obj)
  .xtensa.info   0x0000000000000038        0x0 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_esp32s2_esp32s3.c.obj)
  .xtensa.info   0x0000000000000038        0x0 esp-idf/esp_rom/libesp_rom.a(esp_rom_cache_writeback_esp32s3.S.obj)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
- .xtensa.info   0x0000000000000038        0x0 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .xtensa.info   0x0000000000000038        0x0 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtn.o
 
 .comment        0x0000000000000000       0x2f
- .comment       0x0000000000000000       0x2f c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+ .comment       0x0000000000000000       0x2f c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
                                          0x30 (size before relaxing)
  .comment       0x000000000000002f       0x30 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
  .comment       0x000000000000002f       0x30 esp-idf/main/libmain.a(bootloader_start.c.obj)
@@ -5757,7 +5757,7 @@ OUTPUT(bootloader.elf elf32-xtensa-le)
  .comment       0x000000000000002f       0x30 esp-idf/hal/libhal.a(efuse_hal.c.obj)
  .comment       0x000000000000002f       0x30 esp-idf/hal/libhal.a(mmu_hal.c.obj)
  .comment       0x000000000000002f       0x30 esp-idf/hal/libhal.a(cache_hal.c.obj)
- .comment       0x000000000000002f       0x30 c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+ .comment       0x000000000000002f       0x30 c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
 
 .debug_frame    0x0000000000000000     0x1228
  .debug_frame   0x0000000000000000       0x40 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
@@ -5982,102 +5982,102 @@ OUTPUT(bootloader.elf elf32-xtensa-le)
  .debug_ranges  0x0000000000001180      0x1d8 esp-idf/hal/libhal.a(mmu_hal.c.obj)
  .debug_ranges  0x0000000000001358       0x90 esp-idf/hal/libhal.a(cache_hal.c.obj)
 
-.debug_line     0x0000000000000000    0x1366b
- .debug_line    0x0000000000000000      0x405 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
- .debug_line    0x0000000000000405      0x635 esp-idf/main/libmain.a(bootloader_start.c.obj)
- .debug_line    0x0000000000000a3a     0x1f59 esp-idf/bootloader_support/libbootloader_support.a(bootloader_utility.c.obj)
- .debug_line    0x0000000000002993      0x74e esp-idf/bootloader_support/libbootloader_support.a(flash_partitions.c.obj)
- .debug_line    0x00000000000030e1     0x24f4 esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
- .debug_line    0x00000000000055d5      0x205 esp-idf/bootloader_support/libbootloader_support.a(bootloader_console_loader.c.obj)
- .debug_line    0x00000000000057da      0x474 esp-idf/bootloader_support/libbootloader_support.a(bootloader_sha.c.obj)
- .debug_line    0x0000000000005c4e      0x33a esp-idf/bootloader_support/libbootloader_support.a(bootloader_soc.c.obj)
- .debug_line    0x0000000000005f88      0xb03 esp-idf/bootloader_support/libbootloader_support.a(bootloader_esp32s3.c.obj)
- .debug_line    0x0000000000006a8b      0x8b4 esp-idf/bootloader_support/libbootloader_support.a(bootloader_common_loader.c.obj)
- .debug_line    0x000000000000733f      0x3af esp-idf/bootloader_support/libbootloader_support.a(bootloader_clock_init.c.obj)
- .debug_line    0x00000000000076ee       0xdc esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
- .debug_line    0x00000000000077ca      0x51e esp-idf/bootloader_support/libbootloader_support.a(bootloader_random.c.obj)
- .debug_line    0x0000000000007ce8      0x68a esp-idf/bootloader_support/libbootloader_support.a(bootloader_random_esp32s3.c.obj)
- .debug_line    0x0000000000008372      0xe98 esp-idf/bootloader_support/libbootloader_support.a(flash_encrypt.c.obj)
- .debug_line    0x000000000000920a     0x19cd esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
- .debug_line    0x000000000000abd7      0xbae esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32s3.c.obj)
- .debug_line    0x000000000000b785      0x8e3 esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj)
- .debug_line    0x000000000000c068      0x291 esp-idf/bootloader_support/libbootloader_support.a(bootloader_console.c.obj)
- .debug_line    0x000000000000c2f9      0x20b esp-idf/esp_hw_support/libesp_hw_support.a(cpu_region_protect.c.obj)
- .debug_line    0x000000000000c504     0x21fe esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
- .debug_line    0x000000000000e702      0x71e esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk_init.c.obj)
- .debug_line    0x000000000000ee20     0x16ab esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
- .debug_line    0x00000000000104cb      0x129 esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
- .debug_line    0x00000000000105f4      0x433 esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
- .debug_line    0x0000000000010a27      0x3e4 esp-idf/log/liblog.a(log_noos.c.obj)
- .debug_line    0x0000000000010e0b      0x310 esp-idf/hal/libhal.a(mpu_hal.c.obj)
- .debug_line    0x000000000001111b      0x492 esp-idf/hal/libhal.a(efuse_hal.c.obj)
- .debug_line    0x00000000000115ad      0x8f6 esp-idf/hal/libhal.a(efuse_hal.c.obj)
- .debug_line    0x0000000000011ea3      0xe05 esp-idf/hal/libhal.a(mmu_hal.c.obj)
- .debug_line    0x0000000000012ca8      0x9c3 esp-idf/hal/libhal.a(cache_hal.c.obj)
+.debug_line     0x0000000000000000    0x13e03
+ .debug_line    0x0000000000000000      0x43d esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
+ .debug_line    0x000000000000043d      0x68d esp-idf/main/libmain.a(bootloader_start.c.obj)
+ .debug_line    0x0000000000000aca     0x1fd1 esp-idf/bootloader_support/libbootloader_support.a(bootloader_utility.c.obj)
+ .debug_line    0x0000000000002a9b      0x796 esp-idf/bootloader_support/libbootloader_support.a(flash_partitions.c.obj)
+ .debug_line    0x0000000000003231     0x2564 esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
+ .debug_line    0x0000000000005795      0x225 esp-idf/bootloader_support/libbootloader_support.a(bootloader_console_loader.c.obj)
+ .debug_line    0x00000000000059ba      0x4ac esp-idf/bootloader_support/libbootloader_support.a(bootloader_sha.c.obj)
+ .debug_line    0x0000000000005e66      0x352 esp-idf/bootloader_support/libbootloader_support.a(bootloader_soc.c.obj)
+ .debug_line    0x00000000000061b8      0xb73 esp-idf/bootloader_support/libbootloader_support.a(bootloader_esp32s3.c.obj)
+ .debug_line    0x0000000000006d2b      0x904 esp-idf/bootloader_support/libbootloader_support.a(bootloader_common_loader.c.obj)
+ .debug_line    0x000000000000762f      0x3d7 esp-idf/bootloader_support/libbootloader_support.a(bootloader_clock_init.c.obj)
+ .debug_line    0x0000000000007a06       0xec esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
+ .debug_line    0x0000000000007af2      0x556 esp-idf/bootloader_support/libbootloader_support.a(bootloader_random.c.obj)
+ .debug_line    0x0000000000008048      0x6aa esp-idf/bootloader_support/libbootloader_support.a(bootloader_random_esp32s3.c.obj)
+ .debug_line    0x00000000000086f2      0xef8 esp-idf/bootloader_support/libbootloader_support.a(flash_encrypt.c.obj)
+ .debug_line    0x00000000000095ea     0x1a25 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
+ .debug_line    0x000000000000b00f      0xc0e esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32s3.c.obj)
+ .debug_line    0x000000000000bc1d      0x953 esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj)
+ .debug_line    0x000000000000c570      0x2b9 esp-idf/bootloader_support/libbootloader_support.a(bootloader_console.c.obj)
+ .debug_line    0x000000000000c829      0x223 esp-idf/esp_hw_support/libesp_hw_support.a(cpu_region_protect.c.obj)
+ .debug_line    0x000000000000ca4c     0x2246 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
+ .debug_line    0x000000000000ec92      0x776 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk_init.c.obj)
+ .debug_line    0x000000000000f408     0x16eb esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
+ .debug_line    0x0000000000010af3      0x131 esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
+ .debug_line    0x0000000000010c24      0x463 esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
+ .debug_line    0x0000000000011087      0x41c esp-idf/log/liblog.a(log_noos.c.obj)
+ .debug_line    0x00000000000114a3      0x338 esp-idf/hal/libhal.a(mpu_hal.c.obj)
+ .debug_line    0x00000000000117db      0x4c2 esp-idf/hal/libhal.a(efuse_hal.c.obj)
+ .debug_line    0x0000000000011c9d      0x92e esp-idf/hal/libhal.a(efuse_hal.c.obj)
+ .debug_line    0x00000000000125cb      0xe3d esp-idf/hal/libhal.a(mmu_hal.c.obj)
+ .debug_line    0x0000000000013408      0x9fb esp-idf/hal/libhal.a(cache_hal.c.obj)
 
-.debug_str      0x0000000000000000     0xd1b1
- .debug_str     0x0000000000000000      0x267 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
-                                        0x2bc (size before relaxing)
- .debug_str     0x0000000000000267      0x84f esp-idf/main/libmain.a(bootloader_start.c.obj)
-                                        0xa97 (size before relaxing)
- .debug_str     0x0000000000000ab6      0xac0 esp-idf/bootloader_support/libbootloader_support.a(bootloader_utility.c.obj)
-                                        0xf6a (size before relaxing)
- .debug_str     0x0000000000001576      0x175 esp-idf/bootloader_support/libbootloader_support.a(flash_partitions.c.obj)
-                                        0x495 (size before relaxing)
- .debug_str     0x00000000000016eb      0x76c esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
-                                       0x1133 (size before relaxing)
- .debug_str     0x0000000000001e57       0x6f esp-idf/bootloader_support/libbootloader_support.a(bootloader_console_loader.c.obj)
-                                        0x248 (size before relaxing)
- .debug_str     0x0000000000001ec6      0x165 esp-idf/bootloader_support/libbootloader_support.a(bootloader_sha.c.obj)
-                                        0x40b (size before relaxing)
- .debug_str     0x000000000000202b       0x9c esp-idf/bootloader_support/libbootloader_support.a(bootloader_soc.c.obj)
-                                        0x293 (size before relaxing)
- .debug_str     0x00000000000020c7      0x4b0 esp-idf/bootloader_support/libbootloader_support.a(bootloader_esp32s3.c.obj)
-                                        0xb2e (size before relaxing)
- .debug_str     0x0000000000002577     0x23de esp-idf/bootloader_support/libbootloader_support.a(bootloader_common_loader.c.obj)
-                                       0x2de6 (size before relaxing)
- .debug_str     0x0000000000004955      0x28f esp-idf/bootloader_support/libbootloader_support.a(bootloader_clock_init.c.obj)
-                                        0x710 (size before relaxing)
- .debug_str     0x0000000000004be4       0x72 esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
-                                        0x233 (size before relaxing)
- .debug_str     0x0000000000004c56       0xac esp-idf/bootloader_support/libbootloader_support.a(bootloader_random.c.obj)
-                                        0x2cf (size before relaxing)
- .debug_str     0x0000000000004d02       0x8c esp-idf/bootloader_support/libbootloader_support.a(bootloader_random_esp32s3.c.obj)
-                                        0x279 (size before relaxing)
- .debug_str     0x0000000000004d8e      0x762 esp-idf/bootloader_support/libbootloader_support.a(flash_encrypt.c.obj)
-                                        0xa19 (size before relaxing)
- .debug_str     0x00000000000054f0     0x1e21 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
-                                       0x4d17 (size before relaxing)
- .debug_str     0x0000000000007311      0x2d3 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32s3.c.obj)
-                                        0xac0 (size before relaxing)
- .debug_str     0x00000000000075e4     0x2bc1 esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj)
-                                       0x3669 (size before relaxing)
- .debug_str     0x000000000000a1a5       0xb6 esp-idf/bootloader_support/libbootloader_support.a(bootloader_console.c.obj)
-                                        0x304 (size before relaxing)
- .debug_str     0x000000000000a25b       0xcb esp-idf/esp_hw_support/libesp_hw_support.a(cpu_region_protect.c.obj)
-                                        0x2bb (size before relaxing)
- .debug_str     0x000000000000a326      0xa04 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
-                                       0x1449 (size before relaxing)
- .debug_str     0x000000000000ad2a      0x102 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk_init.c.obj)
-                                        0xcff (size before relaxing)
- .debug_str     0x000000000000ae2c      0x668 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
-                                       0x32bd (size before relaxing)
- .debug_str     0x000000000000b494       0xbe esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
-                                        0x286 (size before relaxing)
- .debug_str     0x000000000000b552     0x108c esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
-                                       0x1435 (size before relaxing)
- .debug_str     0x000000000000c5de       0xb1 esp-idf/log/liblog.a(log_noos.c.obj)
-                                        0x2dd (size before relaxing)
- .debug_str     0x000000000000c68f       0x9f esp-idf/hal/libhal.a(mpu_hal.c.obj)
-                                        0x2d0 (size before relaxing)
- .debug_str     0x000000000000c72e      0x10b esp-idf/hal/libhal.a(efuse_hal.c.obj)
-                                       0x29f2 (size before relaxing)
- .debug_str     0x000000000000c839      0x37d esp-idf/hal/libhal.a(efuse_hal.c.obj)
-                                       0x2c41 (size before relaxing)
- .debug_str     0x000000000000cbb6      0x307 esp-idf/hal/libhal.a(mmu_hal.c.obj)
-                                        0x602 (size before relaxing)
- .debug_str     0x000000000000cebd      0x2f4 esp-idf/hal/libhal.a(cache_hal.c.obj)
-                                        0x64e (size before relaxing)
+.debug_str      0x0000000000000000     0xd2a3
+ .debug_str     0x0000000000000000      0x269 esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
+                                        0x2be (size before relaxing)
+ .debug_str     0x0000000000000269      0x857 esp-idf/main/libmain.a(bootloader_start.c.obj)
+                                        0xa99 (size before relaxing)
+ .debug_str     0x0000000000000ac0      0xac8 esp-idf/bootloader_support/libbootloader_support.a(bootloader_utility.c.obj)
+                                        0xf6c (size before relaxing)
+ .debug_str     0x0000000000001588      0x17d esp-idf/bootloader_support/libbootloader_support.a(flash_partitions.c.obj)
+                                        0x497 (size before relaxing)
+ .debug_str     0x0000000000001705      0x774 esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
+                                       0x1135 (size before relaxing)
+ .debug_str     0x0000000000001e79       0x77 esp-idf/bootloader_support/libbootloader_support.a(bootloader_console_loader.c.obj)
+                                        0x24a (size before relaxing)
+ .debug_str     0x0000000000001ef0      0x16d esp-idf/bootloader_support/libbootloader_support.a(bootloader_sha.c.obj)
+                                        0x40d (size before relaxing)
+ .debug_str     0x000000000000205d       0xa4 esp-idf/bootloader_support/libbootloader_support.a(bootloader_soc.c.obj)
+                                        0x295 (size before relaxing)
+ .debug_str     0x0000000000002101      0x4b8 esp-idf/bootloader_support/libbootloader_support.a(bootloader_esp32s3.c.obj)
+                                        0xb30 (size before relaxing)
+ .debug_str     0x00000000000025b9     0x23e6 esp-idf/bootloader_support/libbootloader_support.a(bootloader_common_loader.c.obj)
+                                       0x2de8 (size before relaxing)
+ .debug_str     0x000000000000499f      0x297 esp-idf/bootloader_support/libbootloader_support.a(bootloader_clock_init.c.obj)
+                                        0x712 (size before relaxing)
+ .debug_str     0x0000000000004c36       0x7a esp-idf/bootloader_support/libbootloader_support.a(bootloader_mem.c.obj)
+                                        0x235 (size before relaxing)
+ .debug_str     0x0000000000004cb0       0xb4 esp-idf/bootloader_support/libbootloader_support.a(bootloader_random.c.obj)
+                                        0x2d1 (size before relaxing)
+ .debug_str     0x0000000000004d64       0x94 esp-idf/bootloader_support/libbootloader_support.a(bootloader_random_esp32s3.c.obj)
+                                        0x27b (size before relaxing)
+ .debug_str     0x0000000000004df8      0x76a esp-idf/bootloader_support/libbootloader_support.a(flash_encrypt.c.obj)
+                                        0xa1b (size before relaxing)
+ .debug_str     0x0000000000005562     0x1e29 esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash.c.obj)
+                                       0x4d19 (size before relaxing)
+ .debug_str     0x000000000000738b      0x2db esp-idf/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32s3.c.obj)
+                                        0xac2 (size before relaxing)
+ .debug_str     0x0000000000007666     0x2bc9 esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj)
+                                       0x366b (size before relaxing)
+ .debug_str     0x000000000000a22f       0xbe esp-idf/bootloader_support/libbootloader_support.a(bootloader_console.c.obj)
+                                        0x306 (size before relaxing)
+ .debug_str     0x000000000000a2ed       0xd3 esp-idf/esp_hw_support/libesp_hw_support.a(cpu_region_protect.c.obj)
+                                        0x2bd (size before relaxing)
+ .debug_str     0x000000000000a3c0      0xa0c esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
+                                       0x144b (size before relaxing)
+ .debug_str     0x000000000000adcc      0x10a esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk_init.c.obj)
+                                        0xd01 (size before relaxing)
+ .debug_str     0x000000000000aed6      0x670 esp-idf/esp_hw_support/libesp_hw_support.a(rtc_init.c.obj)
+                                       0x32bf (size before relaxing)
+ .debug_str     0x000000000000b546       0xc6 esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
+                                        0x288 (size before relaxing)
+ .debug_str     0x000000000000b60c     0x1094 esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
+                                       0x1437 (size before relaxing)
+ .debug_str     0x000000000000c6a0       0xb9 esp-idf/log/liblog.a(log_noos.c.obj)
+                                        0x2df (size before relaxing)
+ .debug_str     0x000000000000c759       0xa7 esp-idf/hal/libhal.a(mpu_hal.c.obj)
+                                        0x2d2 (size before relaxing)
+ .debug_str     0x000000000000c800      0x113 esp-idf/hal/libhal.a(efuse_hal.c.obj)
+                                       0x29f4 (size before relaxing)
+ .debug_str     0x000000000000c913      0x385 esp-idf/hal/libhal.a(efuse_hal.c.obj)
+                                       0x2c43 (size before relaxing)
+ .debug_str     0x000000000000cc98      0x30f esp-idf/hal/libhal.a(mmu_hal.c.obj)
+                                        0x604 (size before relaxing)
+ .debug_str     0x000000000000cfa7      0x2fc esp-idf/hal/libhal.a(cache_hal.c.obj)
+                                        0x650 (size before relaxing)
 
 Cross Reference Table
 
@@ -6389,13 +6389,13 @@ TIMERG0                                           esp-idf/bootloader_support/lib
 UART0                                             esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
 UART1                                             esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
 UART2                                             esp-idf/esp_rom/libesp_rom.a(esp_rom_uart.c.obj)
-_ITM_deregisterTMCloneTable                       c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
-_ITM_registerTMCloneTable                         c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
-__DTOR_END__                                      c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
-                                                  c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
-__TMC_END__                                       c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
-                                                  c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
-__ashldi3                                         c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
+_ITM_deregisterTMCloneTable                       c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+_ITM_registerTMCloneTable                         c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+__DTOR_END__                                      c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+                                                  c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+__TMC_END__                                       c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtend.o
+                                                  c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+__ashldi3                                         c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_ashldi3.o)
                                                   esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
 __assert_func                                     esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
                                                   esp-idf/log/liblog.a(log_noos.c.obj)
@@ -6408,18 +6408,18 @@ __assert_func                                     esp-idf/bootloader_support/lib
                                                   esp-idf/bootloader_support/libbootloader_support.a(bootloader_esp32s3.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(bootloader_sha.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
-__deregister_frame_info                           c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
-__divdi3                                          c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
+__deregister_frame_info                           c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+__divdi3                                          c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_divdi3.o)
                                                   esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
                                                   esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk_init.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj)
 __getreent                                        esp-idf/main/libmain.a(bootloader_start.c.obj)
-__lshrdi3                                         c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
+__lshrdi3                                         c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_lshrdi3.o)
                                                   esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
-__popcountsi2                                     c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
+__popcountsi2                                     c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_popcountsi2.o)
                                                   esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
-__register_frame_info                             c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
-__udivdi3                                         c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
+__register_frame_info                             c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crtbegin.o
+__udivdi3                                         c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti\libgcc.a(_udivdi3.o)
                                                   esp-idf/esp_hw_support/libesp_hw_support.a(rtc_time.c.obj)
                                                   esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk_init.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj)
@@ -6431,13 +6431,13 @@ _data_end                                         esp-idf/bootloader_support/lib
 _data_start                                       esp-idf/bootloader_support/libbootloader_support.a(bootloader_esp32s3.c.obj)
 _dram_end                                         esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
 _dram_start                                       esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
-_fini                                             c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
-_global_impure_ptr                                c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
+_fini                                             c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+_global_impure_ptr                                c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-impure.o)
                                                   esp-idf/main/libmain.a(bootloader_start.c.obj)
-_init                                             c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
+_init                                             c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/no-rtti/crti.o
 _loader_text_end                                  esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
 _loader_text_start                                esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
-_start                                            c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+_start                                            c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
 abort                                             esp-idf/bootloader_support/libbootloader_support.a(bootloader_panic.c.obj)
                                                   esp-idf/hal/libhal.a(cache_hal.c.obj)
                                                   esp-idf/hal/libhal.a(mmu_hal.c.obj)
@@ -6833,17 +6833,17 @@ g_rtc_dbias_pvt_non_240m                          esp-idf/esp_hw_support/libesp_
                                                   esp-idf/esp_hw_support/libesp_hw_support.a(rtc_clk.c.obj)
 g_uart_print                                      esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
 g_usb_print                                       esp-idf/esp_rom/libesp_rom.a(esp_rom_sys.c.obj)
-main                                              c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
-memcmp                                            c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
+main                                              c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti/crt0.o
+memcmp                                            c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcmp.o)
                                                   esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(flash_partitions.c.obj)
-memcpy                                            c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
+memcpy                                            c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memcpy.o)
                                                   esp-idf/esp_hw_support/libesp_hw_support.a(cpu_region_protect.c.obj)
                                                   esp-idf/efuse/libefuse.a(esp_efuse_utility.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(esp_image_format.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(bootloader_utility.c.obj)
-memset                                            c:/users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
+memset                                            c:/users/administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/../lib/gcc/xtensa-esp32s3-elf/12.2.0/../../../../xtensa-esp32s3-elf/lib/no-rtti\libc.a(lib_a-memset.o)
                                                   esp-idf/efuse/libefuse.a(esp_efuse_api.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(bootloader_init.c.obj)
                                                   esp-idf/bootloader_support/libbootloader_support.a(bootloader_sha.c.obj)

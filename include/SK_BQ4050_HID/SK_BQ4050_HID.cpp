@@ -9,14 +9,14 @@ uint16_t bq_BattState_u16()
     ESP_ERROR_CHECK(bq4050_register_read(0x16, battStatus, 2));
     if (battStatus[0] & 0x40)
     {
-        ret |= 1 << PRESENTSTATUS_ACPRESENT;
-        ret |= 1 << PRESENTSTATUS_CHARGING;
-        ret |= ((battStatus[0] & 0x20) ? 0x00 : 1 << PRESENTSTATUS_FULLCHARGE);
+        ret |= 1 << PRESENTSTATUS_DISCHARGING;
+        ret |= ((battStatus[0] & 0x10) ? 1 << PRESENTSTATUS_FULLDISCHARGE : 0x00);
     }
     else
     {
-        ret |= 1 << PRESENTSTATUS_DISCHARGING;
-        ret |= ((battStatus[0] & 0x10) ? 0x00 : 1 << PRESENTSTATUS_FULLDISCHARGE);
+        ret |= 1 << PRESENTSTATUS_ACPRESENT;
+        ret |= 1 << PRESENTSTATUS_CHARGING;
+        ret |= ((battStatus[0] & 0x20) ? 1 << PRESENTSTATUS_FULLCHARGE : 0x00);
     }
     ESP_ERROR_CHECK(bq4050_register_read(0x12, battStatus, 2));
     battStatus_total = (battStatus[1] << 8) + battStatus[0];

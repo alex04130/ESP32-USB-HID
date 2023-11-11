@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/CMakeFiles/bootloader"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/CMakeFiles/bootloader.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 

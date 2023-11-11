@@ -189,19 +189,6 @@ uint8_t bq_GetHealth()
     battHealth = ((float)battFCC * 100.0f / (float)battDC);
     return (battHealth >= 100.0f ? 100 : (uint8_t)battHealth);
 }
-uint8_t *bq_GetHealth_Pointer()
-{ // Unit: %
-    uint8_t battBuf[2];
-    uint16_t battFCC, battDC;
-    uint8_t battHealth;
-    ESP_ERROR_CHECK(bq4050_register_read(0x10, battBuf, 2));
-    battFCC = (battBuf[1] << 8) + battBuf[0];
-    ESP_ERROR_CHECK(bq4050_register_read(0x18, battBuf, 2));
-    battDC = (battBuf[1] << 8) + battBuf[0];
-    battHealth = ((float)battFCC * 100.0f / (float)battDC);
-    battHealth = battHealth >= 100 ? 100 : battHealth;
-    return &battHealth;
-}
 
 uint16_t bq_GetCellVolt(uint8_t cellNo)
 { // Unit: mV

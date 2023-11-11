@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/13684/esp/esp-idf/components/esp_coex
+# Install script for directory: C:/Users/Administrator/esp/esp-idf/components/esp_coex
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Users/13684/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Users/Administrator/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-objdump.exe")
 endif()
 

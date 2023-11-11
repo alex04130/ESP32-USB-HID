@@ -20,7 +20,9 @@
 #include "esp_log.h"
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
+#include "bq4050.h"
 #include "esp32ups_hid.h"
+#include "SK_BQ4050_HID.h"
 #include "gpio_cxx.hpp"
 #include <thread>
 
@@ -33,6 +35,8 @@ using namespace idf;
 
 #define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_HID_INOUT_DESC_LEN)
 #define ITF_NUM_TOTAL 1
+
+// #define __USB_HID_ENABLE__
 
 #ifdef __SK_BQ4050_HID__
 // 固定参数
@@ -81,6 +85,8 @@ static const char *TAG = "SKele-DC";
 unsigned char BatteryRechargable = 1;
 unsigned char BatteryCapacityMode = 2; // units are in %%
 
+#ifdef __USB_HID_ENABLE__
+
 tusb_desc_device_t descriptor_config = {
     .bLength = sizeof(descriptor_config),
     .bDescriptorType = 0x01, //    0x01
@@ -118,6 +124,8 @@ uint8_t const desc_configuration[] = {
 
     //    接口描述符、HID描述符、端点描述符
     TUD_HID_INOUT_DESCRIPTOR(1, 0x04, 0, sizeof(ESP32UPS::desc_hid_report), 0x01, 0x81, 64, 10)};
+
+#endif
 
 #ifdef __SK_BQ4050_HID__
 static esp_err_t i2c_master_init()
@@ -169,6 +177,7 @@ uint16_t BattState_u16(bool charging)
 
 extern "C" void app_main()
 {
+#ifdef __USB_HID_ENABLE__
     ESP_LOGI(TAG, "USB initialization");
     const tinyusb_config_t tusb_cfg = {
         .device_descriptor = &descriptor_config,
@@ -181,7 +190,7 @@ extern "C" void app_main()
 
     ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
     ESP_LOGI(TAG, "USB initialization DONE");
-    ESP_LOGI(TAG, "initialization DONE!\n:)");
+#endif
 #ifdef __SK_BQ4050_HID__
     const GPIO_Output ChargingLED(GPIONum(37));
     const GPIO_Output PowerlossLED(GPIONum(36));
@@ -195,6 +204,7 @@ extern "C" void app_main()
     const GPIOInput persentdown(GPIONum(41));
     const GPIOInput charging(GPIONum(42));
 #endif
+    ESP_LOGI(TAG, "initialization DONE!\n:)");
 
     while (1)
     {
@@ -202,15 +212,17 @@ extern "C" void app_main()
         BatteryCurrentCapacity = bq_GetRSOC();
         BatteryRunTimeToEmpty = bq_GetT2E();
         BatteryCurrentStatus = bq_BattState_u16();
+#ifdef __USB_HID_ENABLE__
         if ((BatteryCurrentCapacity != BatteryPrevCapacity) || (BatteryCurrentStatus != BatteryPrevStatus))
         {
             tud_hid_report(HID_PD_REMAININGCAPACITY, &BatteryCurrentCapacity, sizeof(BatteryCurrentCapacity));
             tud_hid_report(HID_PD_PRESENTSTATUS, &BatteryCurrentStatus, sizeof(BatteryCurrentStatus));
             if (BatteryCurrentStatus & (1 << PRESENTSTATUS_DISCHARGING))
                 tud_hid_report(HID_PD_RUNTIMETOEMPTY, &BatteryRunTimeToEmpty, sizeof(BatteryRunTimeToEmpty));
-            BatteryCurrentCapacity = BatteryPrevCapacity;
-            BatteryCurrentStatus = BatteryPrevStatus;
+            BatteryPrevCapacity = BatteryCurrentCapacity;
+            BatteryPrevStatus = BatteryCurrentStatus;
         }
+#endif
         if (BatteryCurrentCapacity < 10)
             PowerlossLED.set_high();
         else
@@ -252,6 +264,8 @@ extern "C" void app_main()
         vTaskDelay(2000 / portTICK_PERIOD_MS);
     }
 }
+
+#ifdef __USB_HID_ENABLE__
 
 uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t *buffer, uint16_t reqlen)
 {
@@ -415,3 +429,5 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
     }
     ESP_LOGI(TAG, "end REQUSET\n");
 }
+
+#endif

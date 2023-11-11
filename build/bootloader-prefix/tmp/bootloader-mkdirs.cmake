@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/13684/esp/esp-idf/components/bootloader/subproject"
-  "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader"
-  "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix"
-  "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/tmp"
-  "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src"
-  "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/Administrator/esp/esp-idf/components/bootloader/subproject"
+  "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader"
+  "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix"
+  "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/tmp"
+  "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src"
+  "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/Administrator/Desktop/esp32/SK231024827118/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()
