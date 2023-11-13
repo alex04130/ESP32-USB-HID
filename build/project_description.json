@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "SK231024827118",
-    "project_version":    "533e58c-dirty",
+    "project_version":    "dd7bcb8-dirty",
     "project_path":       "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD",
     "idf_path":           "C:/Users/13684/esp/esp-idf",
     "build_dir":          "C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build",

@@ -117,7 +117,7 @@ uint16_t bq_BattState_u16()
 #define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_HID_INOUT_DESC_LEN)
 #define ITF_NUM_TOTAL 1
 
-#define __USB_HID_ENABLE__
+// #define __USB_HID_ENABLE__
 
 #ifdef __SK_BQ4050_HID__
 // 固定参数
