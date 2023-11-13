@@ -205,7 +205,6 @@ extern "C" void app_main()
     const GPIOInput charging(GPIONum(42));
 #endif
     ESP_LOGI(TAG, "initialization DONE!\n:)");
-
     while (1)
     {
 #ifdef __SK_BQ4050_HID__
