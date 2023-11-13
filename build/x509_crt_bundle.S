@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/Administrator/Desktop/esp32/SK231024827118/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

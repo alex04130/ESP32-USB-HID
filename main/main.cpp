@@ -1,3 +1,4 @@
+#define __DEBUG_BQ4050__
 
 // I2C设置
 #define I2C_MASTER_SCL_IO 38        /*!< GPIO number used for I2C master clock */
@@ -20,14 +21,94 @@
 #include "esp_log.h"
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
-#include "bq4050.h"
 #include "esp32ups_hid.h"
+#ifndef __DEBUG_BQ4050__
+#include "bq4050.h"
 #include "SK_BQ4050_HID.h"
+#endif
 #include "gpio_cxx.hpp"
 #include <thread>
 
 using namespace std;
 using namespace idf;
+
+#ifdef __DEBUG_BQ4050__
+
+#define BQ4050_ADDR 0x0B
+#define __SK_BQ4050_HID__
+#define Battery_RTE_Limit 5
+#define Battery_Shutdown_Limit 2
+
+esp_err_t bq4050_register_read(uint8_t reg_addr, uint8_t *data, size_t len)
+{
+    return i2c_master_write_read_device(I2C_MASTER_NUM, BQ4050_ADDR, &reg_addr, 1, data, len, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+}
+
+uint16_t bq_GetVoltage()
+{ // Unit: mV
+    uint8_t battBuf[2];
+    uint16_t battVolt;
+    ESP_ERROR_CHECK(bq4050_register_read(0x09, battBuf, 2));
+    battVolt = (battBuf[1] << 8) + battBuf[0];
+    return battVolt;
+}
+
+uint8_t bq_GetRSOC()
+{ // Unit: %
+    uint8_t battBuf[2];
+    ESP_ERROR_CHECK(bq4050_register_read(0x0D, battBuf, 2));
+    return battBuf[0];
+}
+
+uint16_t bq_GetT2E()
+{ // Unit: min
+    uint8_t battBuf[2];
+    uint16_t battT2E;
+    ESP_ERROR_CHECK(bq4050_register_read(0x12, battBuf, 2));
+    battT2E = (battBuf[1] << 8) + battBuf[0];
+    return battT2E;
+}
+
+uint16_t bq_GetT2F()
+{ // Unit: min
+    uint8_t battBuf[2];
+    uint16_t battT2F;
+    ESP_ERROR_CHECK(bq4050_register_read(0x13, battBuf, 2));
+    battT2F = (battBuf[1] << 8) + battBuf[0];
+    return battT2F;
+}
+
+uint16_t bq_BattState_u16()
+{
+    uint16_t ret = 0, battStatus_total = 0;
+    uint8_t battStatus[2];
+    ESP_ERROR_CHECK(bq4050_register_read(0x16, battStatus, 2));
+    if (battStatus[0] & 0x40)
+    {
+        ret |= 1 << PRESENTSTATUS_DISCHARGING;
+        ret |= ((battStatus[0] & 0x10) ? 1 << PRESENTSTATUS_FULLDISCHARGE : 0x00);
+    }
+    else
+    {
+        ret |= 1 << PRESENTSTATUS_ACPRESENT;
+        ret |= 1 << PRESENTSTATUS_CHARGING;
+        ret |= ((battStatus[0] & 0x20) ? 1 << PRESENTSTATUS_FULLCHARGE : 0x00);
+    }
+    ESP_ERROR_CHECK(bq4050_register_read(0x12, battStatus, 2));
+    battStatus_total = (battStatus[1] << 8) + battStatus[0];
+    if (battStatus_total < Battery_RTE_Limit)
+    {
+        ret |= 1 << PRESENTSTATUS_SHUTDOWNREQ;
+    }
+    if (battStatus_total <= Battery_Shutdown_Limit)
+    {
+        ret |= 1 << PRESENTSTATUS_SHUTDOWNIMNT;
+    }
+    ret |= 1 << PRESENTSTATUS_BATTPRESENT;
+    return ret;
+}
+
+#endif
 
 #define SetBitTrue(a, b) a |= (1 << b)
 #define SetBitFalse(a, b) a &= ~(1 << b)
@@ -139,10 +220,10 @@ static esp_err_t i2c_master_init()
         .master{
             .clk_speed = I2C_MASTER_FREQ_HZ},
     };
-
+#ifndef __DEBUG_BQ4050__
     BQ4050::I2C_MASTER = I2C_MASTER_NUM;
     BQ4050::I2C_MASTER_TIMEOUT = I2C_MASTER_TIMEOUT_MS;
-
+#endif
     i2c_param_config(I2C_MASTER_NUM, &conf);
 
     return i2c_driver_install(I2C_MASTER_NUM, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
