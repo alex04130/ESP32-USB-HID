@@ -67,5 +67,3 @@ $<TARGET_FILE:__idf_espressif__tinyusb>
 $<TARGET_FILE:__idf_espressif__esp_tinyusb>
 $<TARGET_FILE:__idf_main>
 $<TARGET_FILE:__idf_esp32ups_hid>
-$<TARGET_FILE:__idf_bq4050>
-$<TARGET_FILE:__idf_SK_BQ4050_HID>

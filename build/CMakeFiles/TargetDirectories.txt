@@ -647,17 +647,3 @@ C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/esp32ups
 C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/esp32ups_hid/CMakeFiles/install.dir
 C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/esp32ups_hid/CMakeFiles/install/local.dir
 C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/esp32ups_hid/CMakeFiles/install/strip.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/bq4050/CMakeFiles/__idf_bq4050.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/bq4050/CMakeFiles/edit_cache.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/bq4050/CMakeFiles/rebuild_cache.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/bq4050/CMakeFiles/list_install_components.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/bq4050/CMakeFiles/install.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/bq4050/CMakeFiles/install/local.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/bq4050/CMakeFiles/install/strip.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/SK_BQ4050_HID/CMakeFiles/__idf_SK_BQ4050_HID.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/SK_BQ4050_HID/CMakeFiles/edit_cache.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/SK_BQ4050_HID/CMakeFiles/rebuild_cache.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/SK_BQ4050_HID/CMakeFiles/list_install_components.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/SK_BQ4050_HID/CMakeFiles/install.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/SK_BQ4050_HID/CMakeFiles/install/local.dir
-C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/SK_BQ4050_HID/CMakeFiles/install/strip.dir

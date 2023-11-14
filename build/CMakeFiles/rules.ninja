@@ -1473,44 +1473,6 @@ rule C_STATIC_LIBRARY_LINKER____idf_esp32ups_hid_
 
 
 #############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER____idf_bq4050_
-  depfile = $DEP_FILE
-  deps = gcc
-  command = C:\Users\13684\.espressif\tools\xtensa-esp32s3-elf\esp-12.2.0_20230208\xtensa-esp32s3-elf\bin\xtensa-esp32s3-elf-g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking C static library.
-
-rule C_STATIC_LIBRARY_LINKER____idf_bq4050_
-  command = cmd.exe /C "$PRE_LINK && C:\Users\13684\.espressif\tools\cmake\3.24.0\bin\cmake.exe -E rm -f $TARGET_FILE && C:\Users\13684\.espressif\tools\xtensa-esp32s3-elf\esp-12.2.0_20230208\xtensa-esp32s3-elf\bin\xtensa-esp32s3-elf-ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\Users\13684\.espressif\tools\xtensa-esp32s3-elf\esp-12.2.0_20230208\xtensa-esp32s3-elf\bin\xtensa-esp32s3-elf-ranlib.exe $TARGET_FILE && $POST_BUILD"
-  description = Linking C static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER____idf_SK_BQ4050_HID_
-  depfile = $DEP_FILE
-  deps = gcc
-  command = C:\Users\13684\.espressif\tools\xtensa-esp32s3-elf\esp-12.2.0_20230208\xtensa-esp32s3-elf\bin\xtensa-esp32s3-elf-g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking C static library.
-
-rule C_STATIC_LIBRARY_LINKER____idf_SK_BQ4050_HID_
-  command = cmd.exe /C "$PRE_LINK && C:\Users\13684\.espressif\tools\cmake\3.24.0\bin\cmake.exe -E rm -f $TARGET_FILE && C:\Users\13684\.espressif\tools\xtensa-esp32s3-elf\esp-12.2.0_20230208\xtensa-esp32s3-elf\bin\xtensa-esp32s3-elf-ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\Users\13684\.espressif\tools\xtensa-esp32s3-elf\esp-12.2.0_20230208\xtensa-esp32s3-elf\bin\xtensa-esp32s3-elf-ranlib.exe $TARGET_FILE && $POST_BUILD"
-  description = Linking C static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE

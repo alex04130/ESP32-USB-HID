@@ -432,13 +432,3 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/esp32ups_hid/cmake_install.cmake")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/bq4050/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/SK_BQ4050_HID/cmake_install.cmake")
-endif()
-
