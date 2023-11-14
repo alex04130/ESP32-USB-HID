@@ -1956,3 +1956,5 @@
 94845	95272	7216828784430061	C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/.bin_timestamp	f94917355c2f42cb
 95272	95386	0	esp-idf/esptool_py/CMakeFiles/app_check_size	c4fede4094681528
 95272	95386	0	C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/esp-idf/esptool_py/CMakeFiles/app_check_size	c4fede4094681528
+0	7434038	0	CMakeFiles/confserver	d2b656780d26e0fc
+0	7434038	0	C:/Users/13684/Desktop/esp32/esp32s3/SK/SK231024827118-SD/build/CMakeFiles/confserver	d2b656780d26e0fc

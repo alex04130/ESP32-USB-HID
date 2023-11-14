@@ -39,9 +39,48 @@ using namespace idf;
 #define Battery_RTE_Limit 5
 #define Battery_Shutdown_Limit 2
 
+static esp_err_t Check_I2C_Error(esp_err_t err)
+{
+    switch (err)
+    {
+    case ESP_OK: 
+        break;
+    case ESP_ERR_INVALID_ARG: 
+        ESP_LOGE(TAG, "I2C parameter error");
+        break;
+    case ESP_FAIL:
+        ESP_LOGE(TAG, "I2C no slave ACK");
+        break;
+    case ESP_ERR_INVALID_STATE: 
+        ESP_LOGE(TAG, "I2C driver not installed or not master");
+        break;
+    case ESP_ERR_TIMEOUT:  
+        ESP_LOGE(TAG, "I2C timeout");
+        break;
+    default:
+        ESP_LOGE(TAG, "I2C error %d", err);
+    }
+    return err;
+}
+
 esp_err_t bq4050_register_read(uint8_t reg_addr, uint8_t *data, size_t len)
 {
-    return i2c_master_write_read_device(I2C_MASTER_NUM, BQ4050_ADDR, &reg_addr, 1, data, len, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+    esp_err_t err = ESP_FAIL;
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, BQ4050_ADDR << 1 , ACK_CHECK);
+    i2c_master_write_byte(cmd, reg_addr, ACK_CHECK);
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, BQ4050_ADDR << 1 | 1, ACK_CHECK);
+    if (len > 1)
+    {
+        i2c_master_read(cmd, data, len - 1, ACK_VALUE);
+    }
+    i2c_master_read_byte(cmd, &data[len - 1], NACK_VALUE);
+    i2c_master_stop(cmd);
+    err = _check_i2c_error(i2c_master_cmd_begin(smbus_info->i2c_port, cmd, smbus_info->timeout));
+    i2c_cmd_link_delete(cmd);
+    return err;
 }
 
 uint16_t bq_GetVoltage()
