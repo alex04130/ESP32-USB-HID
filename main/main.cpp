@@ -78,7 +78,7 @@ esp_err_t bq4050_register_read(uint8_t reg_addr, uint8_t *data, size_t len)
     }
     i2c_master_read_byte(cmd, &data[len - 1], NACK_VALUE);
     i2c_master_stop(cmd);
-    err = _check_i2c_error(i2c_master_cmd_begin(smbus_info->i2c_port, cmd, smbus_info->timeout));
+    err = Check_I2C_Error(i2c_master_cmd_begin(I2C_MASTER_NUM, cmd, I2C_MASTER_TIMEOUT_MS/portTICK_PERIOD_MS));
     i2c_cmd_link_delete(cmd);
     return err;
 }
