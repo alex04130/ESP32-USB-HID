@@ -80,7 +80,9 @@
     "ranges": "cpp",
     "span": "cpp",
     "xstring": "cpp",
-    "xutility": "cpp"
+    "xutility": "cpp",
+    "charconv": "cpp",
+    "format": "cpp"
   },
   "cmake.configureOnOpen": false
 }

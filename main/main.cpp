@@ -48,7 +48,7 @@ uint16_t bq_GetVoltage()
 { // Unit: mV
     uint8_t battBuf[2];
     uint16_t battVolt;
-    ESP_ERROR_CHECK(bq4050_register_read(0x09, battBuf, 2));
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x09), battBuf, 2));
     battVolt = (battBuf[1] << 8) + battBuf[0];
     return battVolt;
 }
@@ -56,7 +56,7 @@ uint16_t bq_GetVoltage()
 uint8_t bq_GetRSOC()
 { // Unit: %
     uint8_t battBuf[2];
-    ESP_ERROR_CHECK(bq4050_register_read(0x0D, battBuf, 2));
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x0D), battBuf, 2));
     return battBuf[0];
 }
 
@@ -64,7 +64,7 @@ uint16_t bq_GetT2E()
 { // Unit: min
     uint8_t battBuf[2];
     uint16_t battT2E;
-    ESP_ERROR_CHECK(bq4050_register_read(0x12, battBuf, 2));
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x12), battBuf, 2));
     battT2E = (battBuf[1] << 8) + battBuf[0];
     return battT2E;
 }
@@ -73,7 +73,7 @@ uint16_t bq_GetT2F()
 { // Unit: min
     uint8_t battBuf[2];
     uint16_t battT2F;
-    ESP_ERROR_CHECK(bq4050_register_read(0x13, battBuf, 2));
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x13), battBuf, 2));
     battT2F = (battBuf[1] << 8) + battBuf[0];
     return battT2F;
 }
@@ -82,7 +82,7 @@ uint16_t bq_BattState_u16()
 {
     uint16_t ret = 0, battStatus_total = 0;
     uint8_t battStatus[2];
-    ESP_ERROR_CHECK(bq4050_register_read(0x16, battStatus, 2));
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x16), battStatus, 2));
     if (battStatus[0] & 0x40)
     {
         ret |= 1 << PRESENTSTATUS_DISCHARGING;
@@ -94,7 +94,7 @@ uint16_t bq_BattState_u16()
         ret |= 1 << PRESENTSTATUS_CHARGING;
         ret |= ((battStatus[0] & 0x20) ? 1 << PRESENTSTATUS_FULLCHARGE : 0x00);
     }
-    ESP_ERROR_CHECK(bq4050_register_read(0x12, battStatus, 2));
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x12), battStatus, 2));
     battStatus_total = (battStatus[1] << 8) + battStatus[0];
     if (battStatus_total < Battery_RTE_Limit)
     {
