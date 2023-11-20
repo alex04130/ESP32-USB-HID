@@ -1,4 +1,4 @@
-#define __DEBUG_BQ4050__
+
 
 // I2C设置
 #define I2C_MASTER_SCL_IO 38        /*!< GPIO number used for I2C master clock */
