@@ -6,7 +6,7 @@
 #include "esp_log.h"
 
 // BQ4050配置
-#define BQ4050_ADDR (0x16 >> 0)
+#define BQ4050_ADDR 0x0B
 
 namespace BQ4050
 {

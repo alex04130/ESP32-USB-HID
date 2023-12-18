@@ -1,4 +1,5 @@
 
+
 // I2C设置
 #define BQ4050_I2C_MASTER_SCL_IO 38     /*!< GPIO number used for I2C master clock */
 #define BQ4050_I2C_MASTER_SDA_IO 39     /*!< GPIO number used for I2C master data  */
@@ -27,15 +28,134 @@
 #include "esp_log.h"
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
-#include "bq4050.h"
 #include "esp32ups_hid.h"
+#ifndef __DEBUG_BQ4050__
+#include "bq4050.h"
 #include "SK_BQ4050_HID.h"
+#endif
 #include "gpio_cxx.hpp"
 #include "driver/gpio.h"
 #include <thread>
 
 using namespace std;
 using namespace idf;
+
+#ifdef __DEBUG_BQ4050__
+
+#define BQ4050_ADDR 0x0B
+#define __SK_BQ4050_HID__
+#define Battery_RTE_Limit 5
+#define Battery_Shutdown_Limit 2
+
+static esp_err_t Check_I2C_Error(esp_err_t err)
+{
+    switch (err)
+    {
+    case ESP_OK:
+        break;
+    case ESP_ERR_INVALID_ARG:
+        ESP_LOGE(TAG, "I2C parameter error");
+        break;
+    case ESP_FAIL:
+        ESP_LOGE(TAG, "I2C no slave ACK");
+        break;
+    case ESP_ERR_INVALID_STATE:
+        ESP_LOGE(TAG, "I2C driver not installed or not master");
+        break;
+    case ESP_ERR_TIMEOUT:
+        ESP_LOGE(TAG, "I2C timeout");
+        break;
+    default:
+        ESP_LOGE(TAG, "I2C error %d", err);
+    }
+    return err;
+}
+
+esp_err_t bq4050_register_read(uint8_t reg_addr, uint8_t *data, size_t len)
+{
+    esp_err_t err = ESP_FAIL;
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, BQ4050_ADDR << 1, ACK_CHECK);
+    i2c_master_write_byte(cmd, reg_addr, ACK_CHECK);
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, BQ4050_ADDR << 1 | 1, ACK_CHECK);
+    if (len > 1)
+    {
+        i2c_master_read(cmd, data, len - 1, ACK_VALUE);
+    }
+    i2c_master_read_byte(cmd, &data[len - 1], NACK_VALUE);
+    i2c_master_stop(cmd);
+    err = Check_I2C_Error(i2c_master_cmd_begin(I2C_MASTER_NUM, cmd, I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS));
+    i2c_cmd_link_delete(cmd);
+    return err;
+}
+
+uint16_t bq_GetVoltage()
+{ // Unit: mV
+    uint8_t battBuf[2];
+    uint16_t battVolt;
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x09), battBuf, 2));
+    battVolt = (battBuf[1] << 8) + battBuf[0];
+    return battVolt;
+}
+
+uint8_t bq_GetRSOC()
+{ // Unit: %
+    uint8_t battBuf[2];
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x0D), battBuf, 2));
+    return battBuf[0];
+}
+
+uint16_t bq_GetT2E()
+{ // Unit: min
+    uint8_t battBuf[2];
+    uint16_t battT2E;
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x12), battBuf, 2));
+    battT2E = (battBuf[1] << 8) + battBuf[0];
+    return battT2E;
+}
+
+uint16_t bq_GetT2F()
+{ // Unit: min
+    uint8_t battBuf[2];
+    uint16_t battT2F;
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x13), battBuf, 2));
+    battT2F = (battBuf[1] << 8) + battBuf[0];
+    return battT2F;
+}
+
+uint16_t bq_BattState_u16()
+{
+    uint16_t ret = 0, battStatus_total = 0;
+    uint8_t battStatus[2];
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x16), battStatus, 2));
+    if (battStatus[0] & 0x40)
+    {
+        ret |= 1 << PRESENTSTATUS_DISCHARGING;
+        ret |= ((battStatus[0] & 0x10) ? 1 << PRESENTSTATUS_FULLDISCHARGE : 0x00);
+    }
+    else
+    {
+        ret |= 1 << PRESENTSTATUS_ACPRESENT;
+        ret |= 1 << PRESENTSTATUS_CHARGING;
+        ret |= ((battStatus[0] & 0x20) ? 1 << PRESENTSTATUS_FULLCHARGE : 0x00);
+    }
+    ESP_ERROR_CHECK(bq4050_register_read(uint8_t(0x12), battStatus, 2));
+    battStatus_total = (battStatus[1] << 8) + battStatus[0];
+    if (battStatus_total < Battery_RTE_Limit)
+    {
+        ret |= 1 << PRESENTSTATUS_SHUTDOWNREQ;
+    }
+    if (battStatus_total <= Battery_Shutdown_Limit)
+    {
+        ret |= 1 << PRESENTSTATUS_SHUTDOWNIMNT;
+    }
+    ret |= 1 << PRESENTSTATUS_BATTPRESENT;
+    return ret;
+}
+
+#endif
 
 #define SetBitTrue(a, b) a |= (1 << b)
 #define SetBitFalse(a, b) a &= ~(1 << b)
@@ -125,8 +245,8 @@ static esp_err_t bq4050_i2c_master_init()
 {
     i2c_config_t conf = {
         .mode = I2C_MODE_MASTER,
-        .sda_io_num = BQ4050_I2C_MASTER_SCL_IO,
-        .scl_io_num = BQ4050_I2C_MASTER_SDA_IO,
+        .sda_io_num = BQ4050_I2C_MASTER_SDA_IO,
+        .scl_io_num = BQ4050_I2C_MASTER_SCL_IO,
         .sda_pullup_en = GPIO_PULLUP_ENABLE,
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master{
@@ -144,8 +264,8 @@ static esp_err_t sw7203_i2c_master_init()
 {
     i2c_config_t conf = {
         .mode = I2C_MODE_MASTER,
-        .sda_io_num = SW7203_I2C_MASTER_SCL_IO,
-        .scl_io_num = SW7203_I2C_MASTER_SDA_IO,
+        .sda_io_num = SW7203_I2C_MASTER_SDA_IO,
+        .scl_io_num = SW7203_I2C_MASTER_SCL_IO,
         .sda_pullup_en = GPIO_PULLUP_ENABLE,
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master{

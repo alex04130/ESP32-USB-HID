@@ -76,7 +76,13 @@
     "thread": "cpp",
     "cinttypes": "cpp",
     "typeinfo": "cpp",
-    "*.inc": "cpp"
+    "*.inc": "cpp",
+    "ranges": "cpp",
+    "span": "cpp",
+    "xstring": "cpp",
+    "xutility": "cpp",
+    "charconv": "cpp",
+    "format": "cpp"
   },
   "cmake.configureOnOpen": false
 }
