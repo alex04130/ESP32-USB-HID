@@ -533,7 +533,7 @@ extern "C" void app_main()
             PowerlossLED.set_high();
         else
             PowerlossLED.set_low();
-        if (BatteryCurrentStatus & (1 << PRESENTSTATUS_DISCHARGING))
+        if (BatteryCurrentStatus & (1 << PRESENTSTATUS_CHARGING))
             ChargingLED.set_high();
         else
             ChargingLED.set_low();
