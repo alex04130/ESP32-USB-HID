@@ -1,6 +1,19 @@
 
 #include <bq4050.h>
 #include "driver/i2c.h"
+#include "esp_log.h"
+
+void ESP_I2C_ERROR_CHECK(esp_err_t errcode)
+{
+    if (errcode != ESP_OK)
+    {
+        ESP_LOGI(BQ4050::BQ4050_TAG, "TinyUSB driver error\n:)");
+        while (1)
+        {
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+        }
+    }
+}
 
 esp_err_t bq4050_register_read(uint8_t reg_addr, uint8_t *data, size_t len)
 {
@@ -32,7 +45,7 @@ uint8_t bq_BattState() // Return CHG/DSG(0xC?/0x0?), OK/Bad(0x0?/0x3?), TCTDFCFD
 {
     uint8_t battStatus[2], battDataBuf[7], ret = 0x00;
     uint8_t battCmd[4] = {0x44, 0x02, 0x50, 0x00}; // SafetyAlert MAC Cmd
-    ESP_ERROR_CHECK(bq4050_register_read(0x16, battStatus, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x16, battStatus, 2));
     ret |= (((battStatus[0] & 0x40) == 0x40) ? 0x00 : 0xc0);
     bq_MACReadBlock(battCmd, 3, battDataBuf, 7);
     battDataBuf[6] &= 0x0f; // Clear RSVD
@@ -123,7 +136,7 @@ uint16_t bq_GetVoltage()
 { // Unit: mV
     uint8_t battBuf[2];
     uint16_t battVolt;
-    ESP_ERROR_CHECK(bq4050_register_read(0x09, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x09, battBuf, 2));
     battVolt = (battBuf[1] << 8) + battBuf[0];
     return battVolt;
 }
@@ -131,7 +144,7 @@ int16_t bq_GetCurrent()
 { // Unit: mA
     uint8_t battBuf[2];
     int16_t battCurrent;
-    ESP_ERROR_CHECK(bq4050_register_read(0x0A, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x0A, battBuf, 2));
     battCurrent = uint8_t(battBuf[0] << 8) & battBuf[1];
     return battCurrent;
 }
@@ -139,7 +152,7 @@ int16_t bq_GetCurrent()
 uint8_t bq_GetRSOC()
 { // Unit: %
     uint8_t battBuf[2];
-    ESP_ERROR_CHECK(bq4050_register_read(0x0D, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x0D, battBuf, 2));
     return battBuf[0];
 }
 
@@ -147,7 +160,7 @@ uint16_t bq_GetT2E()
 { // Unit: min
     uint8_t battBuf[2];
     uint16_t battT2E;
-    ESP_ERROR_CHECK(bq4050_register_read(0x12, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x12, battBuf, 2));
     battT2E = (battBuf[1] << 8) + battBuf[0];
     return battT2E;
 }
@@ -156,7 +169,7 @@ uint16_t bq_GetT2F()
 { // Unit: min
     uint8_t battBuf[2];
     uint16_t battT2F;
-    ESP_ERROR_CHECK(bq4050_register_read(0x13, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x13, battBuf, 2));
     battT2F = (battBuf[1] << 8) + battBuf[0];
     return battT2F;
 }
@@ -165,7 +178,7 @@ uint16_t bq_GetPackTemp()
 { // Unit: 0.1K
     uint8_t battBuf[2];
     uint16_t battPackTemp;
-    ESP_ERROR_CHECK(bq4050_register_read(0x08, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x08, battBuf, 2));
     battPackTemp = (battBuf[1] << 8) + battBuf[0];
     return battPackTemp;
 }
@@ -173,7 +186,7 @@ uint16_t bq_GetPackTemp()
 uint8_t bq_GetMaxErr()
 { // Unit: %
     uint8_t battBuf[2];
-    ESP_ERROR_CHECK(bq4050_register_read(0x0C, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x0C, battBuf, 2));
     return battBuf[0];
 }
 
@@ -182,9 +195,9 @@ uint8_t bq_GetHealth()
     uint8_t battBuf[2];
     uint16_t battFCC, battDC;
     float battHealth;
-    ESP_ERROR_CHECK(bq4050_register_read(0x10, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x10, battBuf, 2));
     battFCC = (battBuf[1] << 8) + battBuf[0];
-    ESP_ERROR_CHECK(bq4050_register_read(0x18, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x18, battBuf, 2));
     battDC = (battBuf[1] << 8) + battBuf[0];
     battHealth = ((float)battFCC * 100.0f / (float)battDC);
     return (battHealth >= 100.0f ? 100 : (uint8_t)battHealth);
@@ -197,7 +210,7 @@ uint16_t bq_GetCellVolt(uint8_t cellNo)
     if (cellNo > 4 || cellNo < 1)
         return 0;
     cmd -= cellNo;
-    ESP_ERROR_CHECK(bq4050_register_read(cmd, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(cmd, battBuf, 2));
     battCellVolt = (battBuf[1] << 8) + battBuf[0];
     return battCellVolt;
 }
@@ -206,7 +219,7 @@ uint16_t bq_GetCycleCnt()
 {
     uint8_t battBuf[2];
     uint16_t battCycleCnt;
-    ESP_ERROR_CHECK(bq4050_register_read(0x17, battBuf, 2));
+    ESP_I2C_ERROR_CHECK(bq4050_register_read(0x17, battBuf, 2));
     battCycleCnt = (battBuf[1] << 8) + battBuf[0];
     return battCycleCnt;
 }

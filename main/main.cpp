@@ -1,12 +1,19 @@
 
 // I2C设置
-#define I2C_MASTER_SCL_IO 38        /*!< GPIO number used for I2C master clock */
-#define I2C_MASTER_SDA_IO 39        /*!< GPIO number used for I2C master data  */
-#define I2C_MASTER_NUM I2C_NUM_0    /*!< I2C master i2c port number, the number of i2c peripheral interfaces available will depend on the chip */
-#define I2C_MASTER_FREQ_HZ 400000   /*!< I2C master clock frequency */
-#define I2C_MASTER_TX_BUF_DISABLE 0 /*!< I2C master doesn't need buffer */
-#define I2C_MASTER_RX_BUF_DISABLE 0 /*!< I2C master doesn't need buffer */
-#define I2C_MASTER_TIMEOUT_MS 1000
+#define BQ4050_I2C_MASTER_SCL_IO 38     /*!< GPIO number used for I2C master clock */
+#define BQ4050_I2C_MASTER_SDA_IO 39     /*!< GPIO number used for I2C master data  */
+#define BQ4050_I2C_MASTER_NUM I2C_NUM_0 /*!< I2C master i2c port number, the number of i2c peripheral interfaces available will depend on the chip */
+#define BQ4050_I2C_MASTER_FREQ_HZ 40000 /*!< I2C master clock frequency */
+#define I2C_MASTER_TX_BUF_DISABLE 0     /*!< I2C master doesn't need buffer */
+#define I2C_MASTER_RX_BUF_DISABLE 0     /*!< I2C master doesn't need buffer */
+#define BQ4050_I2C_MASTER_TIMEOUT_MS 14000
+#define SW7203_I2C_MASTER_SCL_IO 45     /*!< GPIO number used for I2C master clock */
+#define SW7203_I2C_MASTER_SDA_IO 48     /*!< GPIO number used for I2C master data  */
+#define SW7203_I2C_MASTER_NUM I2C_NUM_1 /*!< I2C master i2c port number, the number of i2c peripheral interfaces available will depend on the chip */
+#define SW7203_I2C_MASTER_FREQ_HZ 40000 /*!< I2C master clock frequency */
+#define SW7203_I2C_MASTER_TIMEOUT_MS 14000
+
+#define SW7203_ADDR 0x3C
 
 #include <cstdlib>
 #include <iostream>
@@ -24,6 +31,7 @@
 #include "esp32ups_hid.h"
 #include "SK_BQ4050_HID.h"
 #include "gpio_cxx.hpp"
+#include "driver/gpio.h"
 #include <thread>
 
 using namespace std;
@@ -35,10 +43,9 @@ using namespace idf;
 
 #define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_HID_INOUT_DESC_LEN)
 #define ITF_NUM_TOTAL 1
+#define __SW7203_DEBUG__
+#define __USB_HID_ENABLE__
 
-// #define __USB_HID_ENABLE__
-
-#ifdef __SK_BQ4050_HID__
 // 固定参数
 uint16_t BatteryVoltage = 0;
 const unsigned char BatteryDeviceChemistry = IDEVICECHEMISTRY;
@@ -58,32 +65,19 @@ uint8_t BatteryRunTimeToFull = 0;
 // 上一个参数
 uint16_t BatteryPrevStatus = 0;
 uint8_t BatteryPrevCapacity = 0;
-#else
-// 固定参数
-uint16_t BatteryVoltage = 7000;
-const unsigned char BatteryDeviceChemistry = IDEVICECHEMISTRY;
-const unsigned char BatteryOEMVendor = IOEMVENDOR;
-uint16_t ManufactureDate = 100;
-const unsigned char BatteryDesignCapacity = 100;
-const unsigned char BatteryFullChargeCapacity = 100;
-unsigned char BatteryWarnCapacityLimit = 10;
-unsigned char BatteryRemnCapacityLimit = 5;
-unsigned char BatteryCapacityGranularity1 = 1;
-unsigned char BatteryCapacityGranularity2 = 1;
-// 实时参数
-uint16_t BatteryCurrentStatus = 0;
-uint8_t BatteryCurrentCapacity = 70;
-uint8_t BatteryRunTimeToEmpty = 1000;
-uint8_t BatteryRunTimeToFull = 1000;
-// 上一个参数
-uint16_t BatteryPrevStatus = 0;
-uint8_t BatteryPrevCapacity = 70;
-#endif
+
+bool AC_IN = false;
+bool NVDC_BAT_charge = false;
 
 static const char *TAG = "SKele-DC";
 
 unsigned char BatteryRechargable = 1;
 unsigned char BatteryCapacityMode = 2; // units are in %%
+
+int err_code = 0;
+const GPIO_Output ErrLED(GPIONum(40));
+const GPIO_Output ChargingLED(GPIONum(37));
+const GPIO_Output PowerlossLED(GPIONum(36));
 
 #ifdef __USB_HID_ENABLE__
 
@@ -114,7 +108,7 @@ const char *string_descriptor[] = {
     "深空电子",               // 1: 制造商
     "深空电子HID通用UPS项目", // 2: 产品
     "1",                      // 3: 串行、芯片ID
-    "深空电子HID",            // 4: HID
+    "Li-on",                  // 4: HID
     "深空电子HID接口",        // 5: 配置描述符
 };
 
@@ -127,56 +121,156 @@ uint8_t const desc_configuration[] = {
 
 #endif
 
-#ifdef __SK_BQ4050_HID__
-static esp_err_t i2c_master_init()
+static esp_err_t bq4050_i2c_master_init()
 {
     i2c_config_t conf = {
         .mode = I2C_MODE_MASTER,
-        .sda_io_num = I2C_MASTER_SCL_IO,
-        .scl_io_num = I2C_MASTER_SDA_IO,
+        .sda_io_num = BQ4050_I2C_MASTER_SCL_IO,
+        .scl_io_num = BQ4050_I2C_MASTER_SDA_IO,
         .sda_pullup_en = GPIO_PULLUP_ENABLE,
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master{
-            .clk_speed = I2C_MASTER_FREQ_HZ},
+            .clk_speed = BQ4050_I2C_MASTER_FREQ_HZ},
     };
 
-    BQ4050::I2C_MASTER = I2C_MASTER_NUM;
-    BQ4050::I2C_MASTER_TIMEOUT = I2C_MASTER_TIMEOUT_MS;
+    BQ4050::I2C_MASTER = BQ4050_I2C_MASTER_NUM;
+    BQ4050::I2C_MASTER_TIMEOUT = BQ4050_I2C_MASTER_TIMEOUT_MS;
 
-    i2c_param_config(I2C_MASTER_NUM, &conf);
+    i2c_param_config(BQ4050_I2C_MASTER_NUM, &conf);
 
-    return i2c_driver_install(I2C_MASTER_NUM, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
+    return i2c_driver_install(BQ4050_I2C_MASTER_NUM, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
 }
-#else
-uint16_t BattState_u16(bool charging)
+static esp_err_t sw7203_i2c_master_init()
 {
-    uint16_t ret = 0;
-    if (charging)
+    i2c_config_t conf = {
+        .mode = I2C_MODE_MASTER,
+        .sda_io_num = SW7203_I2C_MASTER_SCL_IO,
+        .scl_io_num = SW7203_I2C_MASTER_SDA_IO,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_pullup_en = GPIO_PULLUP_ENABLE,
+        .master{
+            .clk_speed = SW7203_I2C_MASTER_FREQ_HZ},
+    };
+
+    i2c_param_config(SW7203_I2C_MASTER_NUM, &conf);
+
+    return i2c_driver_install(SW7203_I2C_MASTER_NUM, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
+}
+
+esp_err_t sw7203_register_read(uint8_t reg_addr, uint8_t *data)
+{
+    return i2c_master_write_read_device(SW7203_I2C_MASTER_NUM, SW7203_ADDR, &reg_addr, 1, data, 1, SW7203_I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+}
+esp_err_t sw7203_register_write(uint8_t *data)
+{
+    return i2c_master_write_to_device(SW7203_I2C_MASTER_NUM, SW7203_ADDR, data, 2, SW7203_I2C_MASTER_TIMEOUT_MS / portTICK_PERIOD_MS);
+}
+void sw7203_check_error(esp_err_t errcode)
+{
+    if (errcode != ESP_OK)
     {
-        ret |= 1 << PRESENTSTATUS_ACPRESENT;
-        ret |= 1 << PRESENTSTATUS_CHARGING;
-        ret |= ((BatteryCurrentCapacity == 100) ? 1 << PRESENTSTATUS_FULLCHARGE : 0x00);
+        ESP_LOGI(TAG, "SW7203 I2C error\n:)");
+        ESP_ERROR_CHECK_WITHOUT_ABORT(err_code);
+        while (1)
+        {
+            ErrLED.set_high();
+            vTaskDelay(100 / portTICK_PERIOD_MS);
+            ErrLED.set_low();
+            vTaskDelay(100 / portTICK_PERIOD_MS);
+        }
     }
-    else
+}
+#ifndef __SW7203_DEBUG__
+void sw7203_start_charge()
+{
+    unsigned int VBUS_Voltage = 0;
+    uint8_t data = 0;
+    sw7203_check_error(sw7203_register_read(0x11, &data));
+    VBUS_Voltage = data;
+    VBUS_Voltage = VBUS_Voltage << 4;
+    sw7203_check_error(sw7203_register_read(0x12, &data));
+    VBUS_Voltage &= (data & 0b00001111);
+    VBUS_Voltage *= 75;
+    VBUS_Voltage -= 7500;
+    VBUS_Voltage = (VBUS_Voltage - 40000) / 1000;
+    uint8_t VBUS_BitMask = 0b01111111, VBUS_Limit = VBUS_Voltage;
+    uint8_t cmd[3][2] = {{0x38, uint8_t(VBUS_Limit & VBUS_BitMask)}, {0x19, 0b00000100}, {0x0D, 0b00010000}};
+    sw7203_register_write(cmd[0]);
+    sw7203_register_write(cmd[1]);
+    sw7203_register_write(cmd[2]);
+}
+void sw7203_stop_charge()
+{
+    uint8_t cmd[2][2] = {{0x04, 0b00000100}, {0x19, 0b00000000}};
+    sw7203_register_write(cmd[0]);
+    sw7203_register_write(cmd[1]);
+}
+void IRAM_ATTR sw7203_irq_func(void *arg)
+{
+    uint32_t gpio_num = (uint32_t)arg;
+    if (gpio_num == 47)
     {
-        ret |= 1 << PRESENTSTATUS_DISCHARGING;
-        ret |= ((BatteryCurrentCapacity == 0) ? 1 << PRESENTSTATUS_FULLDISCHARGE : 0x00);
+        uint8_t data = 0;
+        sw7203_check_error(sw7203_register_read(0x04, &data));
+        if (data & 0x40)
+        {
+            ESP_LOGI(TAG, "VSYS voltage limit exceeded");
+        }
+        if (data & 0x20)
+        {
+            ESP_LOGI(TAG, "Battery charge time limit exceeded");
+        }
+        if (data & 0x10)
+        {
+            ESP_LOGI(TAG, "Battery fullcharged");
+        }
+        if (data & 0x08)
+        {
+            ESP_LOGI(TAG, "DCIN moved in");
+            AC_IN = true;
+            sw7203_start_charge();
+        }
+        if (data & 0x04)
+        {
+            ESP_LOGI(TAG, "DCIN moved out");
+            AC_IN = false;
+            sw7203_stop_charge();
+        }
+        sw7203_check_error(sw7203_register_read(0x05, &data));
+        if (data & 0x80)
+        {
+            ESP_LOGI(TAG, "SW7203 over temperature");
+        }
+        if (data & 0x10)
+        {
+            ESP_LOGI(TAG, "VBAT voltage limit exceeded");
+        }
+        if (data & 0x08)
+        {
+            ESP_LOGI(TAG, "VBAT voltage limit subceeded");
+        }
+        if (data & 0x01)
+        {
+            ESP_LOGI(TAG, "VBUS power limit exceeded");
+        }
+        sw7203_check_error(sw7203_register_read(0x06, &data));
+        if (data & 0x02)
+        {
+            NVDC_BAT_charge = true;
+        }
+        else
+        {
+            NVDC_BAT_charge = false;
+        }
+        uint8_t cmd[2][2] = {{0x04, 0b11111111}, {0x05, 0b11111111}};
+        sw7203_register_write(cmd[0]);
+        sw7203_register_write(cmd[1]);
     }
-    if (BatteryCurrentCapacity < 5)
-    {
-        ret |= 1 << PRESENTSTATUS_SHUTDOWNREQ;
-    }
-    if (BatteryCurrentCapacity <= 2)
-    {
-        ret |= 1 << PRESENTSTATUS_SHUTDOWNIMNT;
-    }
-    ret |= 1 << PRESENTSTATUS_BATTPRESENT;
-    return ret;
 }
 #endif
-
 extern "C" void app_main()
 {
+    ErrLED.set_high();
 #ifdef __USB_HID_ENABLE__
     ESP_LOGI(TAG, "USB initialization");
     const tinyusb_config_t tusb_cfg = {
@@ -188,30 +282,122 @@ extern "C" void app_main()
         .self_powered = false,
     };
 
-    ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
+    if ((err_code = tinyusb_driver_install(&tusb_cfg)) != ESP_OK)
+    {
+        ESP_LOGI(TAG, "TinyUSB driver error\n:)");
+        ESP_ERROR_CHECK_WITHOUT_ABORT(err_code);
+        while (1)
+        {
+            ErrLED.set_high();
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+            ErrLED.set_low();
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+        }
+    }
     ESP_LOGI(TAG, "USB initialization DONE");
 #endif
-#ifdef __SK_BQ4050_HID__
-    const GPIO_Output ChargingLED(GPIONum(37));
-    const GPIO_Output PowerlossLED(GPIONum(36));
-    ESP_ERROR_CHECK(i2c_master_init());
+    uint8_t sw7203_config_data[][2] = {
+        {0x02, 0b00000011},
+        // 中断使能1 0使能 1禁止 7:NULL 6:VSYS过压中断 5:充电超时中断 4:充电充满中断
+        // 3: 适配器插入中断 2:适配器移出中断 1:A2负载接入中断 0:A1负载接入中断
+        {0x03, 0b01000110},
+        {0x04, 0b11111111},
+        {0x05, 0b11111111},
+        {0x0D, 0b00000000},
+        {0x0F, 0b00000001},
+        {0x10, 0b01000001},
+        {0x18, 0b00000011},
+        {0x19, 0b00000000},
+        {0x20, 0b10000100},
+        {0x21, 0b11111111},
+        {0x22, 0b10100000},
+        {0x26, 0b01011001},
+        {0x27, 0b01010101},
+        {0x28, 0b00000100},
+        {0x30, 0b00000011},
+        {0x31, 0b00000000},
+        {0x32, 0b11010000},
+        {0x34, 0b10101010},
+        {0x35, 0b00000000},
+        {0x36, 0b01011111},
+        {0x37, 0b00001111},
+        {0x38, 0b00000100},
+        {0x39, 0b01111111},
+        {0x3A, 0b00010011},
+#ifdef __SW7203_DEBUG__
+        {0x40, 0b01000011},
+#else
+        {0x40, 0b00000011},
+#endif
+        {0x41, 0b00000100},
+        {0x42, 0b00100101}};
+    if ((err_code = bq4050_i2c_master_init()) != ESP_OK)
+    {
+        ESP_LOGI(TAG, "BQ4050 driver error\n:)");
+        ESP_ERROR_CHECK_WITHOUT_ABORT(err_code);
+        while (1)
+        {
+            ErrLED.set_high();
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+            ErrLED.set_low();
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+        }
+    }
     BatteryVoltage = bq_GetVoltage();
     BatteryCurrentCapacity = bq_GetRSOC();
     BatteryRunTimeToEmpty = bq_GetT2E();
     BatteryRunTimeToFull = bq_GetT2F();
-#else
-    const GPIOInput persentup(GPIONum(40));
-    const GPIOInput persentdown(GPIONum(41));
-    const GPIOInput charging(GPIONum(42));
+    ESP_LOGI(TAG, "BQ4050 initialization DONE!\n:)");
+#ifndef __SW7203_DEBUG__
+    gpio_config_t SW7203_IRQ_gpio_config = {
+        .pin_bit_mask = 1ull << 47,
+        .mode = GPIO_MODE_INPUT,
+        .pull_up_en = GPIO_PULLUP_ENABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+        .intr_type = GPIO_INTR_LOW_LEVEL,
+    };
+    gpio_config(&SW7203_IRQ_gpio_config);
+    gpio_install_isr_service(0);
+    gpio_isr_handler_add(GPIO_NUM_47, sw7203_irq_func, (void *)GPIO_NUM_47);
+    gpio_intr_enable(GPIO_NUM_47);
+    ESP_LOGI(TAG, "SW7203 intrupt initialization DONE!\n:)");
 #endif
+    if ((err_code = sw7203_i2c_master_init()) != ESP_OK)
+    {
+        ESP_LOGI(TAG, "SW7203 driver error\n:)");
+        ESP_ERROR_CHECK_WITHOUT_ABORT(err_code);
+        while (1)
+        {
+            ErrLED.set_high();
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+            ErrLED.set_low();
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+        }
+    }
+    for (int i = 0; i < 27; i++)
+    {
+        if ((err_code = sw7203_register_write(sw7203_config_data[i])) != ESP_OK)
+        {
+            ESP_LOGI(TAG, "SW7203 I2C error\n:)");
+            ESP_ERROR_CHECK_WITHOUT_ABORT(err_code);
+            while (1)
+            {
+                ErrLED.set_high();
+                vTaskDelay(100 / portTICK_PERIOD_MS);
+                ErrLED.set_low();
+                vTaskDelay(100 / portTICK_PERIOD_MS);
+            }
+        }
+    }
+    ESP_LOGI(TAG, "SW7203 initialization DONE!\n:)");
     ESP_LOGI(TAG, "initialization DONE!\n:)");
+    ErrLED.set_low();
 
     while (1)
     {
-#ifdef __SK_BQ4050_HID__
         BatteryCurrentCapacity = bq_GetRSOC();
         BatteryRunTimeToEmpty = bq_GetT2E();
-        BatteryCurrentStatus = bq_BattState_u16();
+        BatteryCurrentStatus = bq_BattState_u16(AC_IN, NVDC_BAT_charge);
 #ifdef __USB_HID_ENABLE__
         if ((BatteryCurrentCapacity != BatteryPrevCapacity) || (BatteryCurrentStatus != BatteryPrevStatus))
         {
@@ -232,35 +418,7 @@ extern "C" void app_main()
         else
             ChargingLED.set_low();
         ESP_LOGI(TAG, "Battery Current Capacity :%d\nBattery Current Status :%d\nBattery RunTime To Empty :%d\n", BatteryCurrentCapacity, BatteryCurrentStatus, BatteryRunTimeToEmpty);
-#else
-        if (persentup.get_level() == GPIOLevel::HIGH)
-        {
-            BatteryCurrentCapacity++;
-        }
-        if (persentdown.get_level() == GPIOLevel::HIGH)
-        {
-            BatteryCurrentCapacity--;
-        }
-        if (charging.get_level() == GPIOLevel::HIGH)
-        {
-            BatteryCurrentStatus = BattState_u16(true);
-        }
-        else
-        {
-            BatteryCurrentStatus = BattState_u16(false);
-        }
-        if ((BatteryCurrentCapacity != BatteryPrevCapacity) || (BatteryCurrentStatus != BatteryPrevStatus))
-        {
-            tud_hid_report(HID_PD_REMAININGCAPACITY, &BatteryCurrentCapacity, sizeof(BatteryCurrentCapacity));
-            tud_hid_report(HID_PD_PRESENTSTATUS, &BatteryCurrentStatus, sizeof(BatteryCurrentStatus));
-            if (BatteryCurrentStatus & (1 << PRESENTSTATUS_DISCHARGING))
-                tud_hid_report(HID_PD_RUNTIMETOEMPTY, &BatteryRunTimeToEmpty, sizeof(BatteryRunTimeToEmpty));
-            BatteryPrevCapacity = BatteryCurrentCapacity;
-            BatteryPrevStatus = BatteryCurrentStatus;
-        }
-        ESP_LOGI(TAG, "persentup.get_level() :%d\npersentdown.get_level() :%d\ncharging.get_level() :%d\n", int(persentup.get_level()), int(persentdown.get_level()), int(charging.get_level()));
-        ESP_LOGI(TAG, "Battery Current Capacity :%d\nBattery Current Status :%d\n", BatteryCurrentCapacity, BatteryCurrentStatus);
-#endif
+
         vTaskDelay(2000 / portTICK_PERIOD_MS);
     }
 }
@@ -278,7 +436,7 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
         case HID_PD_PRESENTSTATUS:
         {
 #ifdef __SK_BQ4050_HID__
-            BatteryCurrentStatus = bq_BattState_u16();
+            BatteryCurrentStatus = bq_BattState_u16(AC_IN, NVDC_BAT_charge);
             buffer[0] = BatteryCurrentStatus & 0x00ff;
             buffer[1] = BatteryCurrentStatus >> 8 & 0x00ff;
             return 2;

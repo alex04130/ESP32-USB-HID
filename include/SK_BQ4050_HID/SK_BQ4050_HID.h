@@ -5,5 +5,5 @@
 
 #define Battery_RTE_Limit 5
 #define Battery_Shutdown_Limit 2
-uint16_t bq_BattState_u16();
+uint16_t bq_BattState_u16(bool ACIN, bool NVDC_charge);
 #endif

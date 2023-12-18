@@ -2,11 +2,12 @@
 #include "esp32ups_hid.h"
 #include "SK_BQ4050_HID.h"
 
-uint16_t bq_BattState_u16()
+uint16_t bq_BattState_u16(bool ACIN, bool NVDC_charge)
 {
     uint16_t ret = 0, battStatus_total = 0;
     uint8_t battStatus[2];
     ESP_ERROR_CHECK(bq4050_register_read(0x16, battStatus, 2));
+    ret |= (ACIN ? 1 << PRESENTSTATUS_ACPRESENT : 0);
     if (battStatus[0] & 0x40)
     {
         ret |= 1 << PRESENTSTATUS_DISCHARGING;
@@ -14,7 +15,6 @@ uint16_t bq_BattState_u16()
     }
     else
     {
-        ret |= 1 << PRESENTSTATUS_ACPRESENT;
         ret |= 1 << PRESENTSTATUS_CHARGING;
         ret |= ((battStatus[0] & 0x20) ? 1 << PRESENTSTATUS_FULLCHARGE : 0x00);
     }
