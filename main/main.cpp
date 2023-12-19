@@ -352,17 +352,6 @@ extern "C" void app_main()
     BatteryRunTimeToEmpty = bq_GetT2E();
     BatteryRunTimeToFull = bq_GetT2F();
     ESP_LOGI(TAG, "BQ4050 initialization DONE!\n:)");
-#ifndef __SW7203_DEBUG__
-    gpio_config_t SW7203_IRQ_gpio_config = {
-        .pin_bit_mask = 1ull << 47,
-        .mode = GPIO_MODE_INPUT,
-        .pull_up_en = GPIO_PULLUP_ENABLE,
-        .pull_down_en = GPIO_PULLDOWN_DISABLE,
-    };
-    gpio_config(&SW7203_IRQ_gpio_config);
-    xTaskCreate(sw7203_irq_func, "SW7203IRQ", 1024, NULL, 20, NULL);
-    ESP_LOGI(TAG, "SW7203 intrupt initialization DONE!\n:)");
-#endif
     if ((err_code = sw7203_i2c_master_init()) != ESP_OK)
     {
         ESP_LOGI(TAG, "SW7203 driver error\n:)");
@@ -391,6 +380,17 @@ extern "C" void app_main()
         }
     }
     ESP_LOGI(TAG, "SW7203 initialization DONE!\n:)");
+#ifndef __SW7203_DEBUG__
+    gpio_config_t SW7203_IRQ_gpio_config = {
+        .pin_bit_mask = 1ull << 47,
+        .mode = GPIO_MODE_INPUT,
+        .pull_up_en = GPIO_PULLUP_ENABLE,
+        .pull_down_en = GPIO_PULLDOWN_DISABLE,
+    };
+    gpio_config(&SW7203_IRQ_gpio_config);
+    xTaskCreate(sw7203_irq_func, "SW7203IRQ", 10240, NULL, 20, NULL);
+    ESP_LOGI(TAG, "SW7203 intrupt initialization DONE!\n:)");
+#endif
     ESP_LOGI(TAG, "initialization DONE!\n:)");
     ErrLED.set_low();
 
