@@ -163,7 +163,6 @@ uint16_t bq_BattState_u16()
 
 #define TUSB_DESC_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_HID_INOUT_DESC_LEN)
 #define ITF_NUM_TOTAL 1
-#define __SW7203_DEBUG__
 #define __USB_HID_ENABLE__
 
 // 固定参数
@@ -328,64 +327,62 @@ void sw7203_stop_charge()
 void IRAM_ATTR sw7203_irq_func(void *arg)
 {
     uint32_t gpio_num = (uint32_t)arg;
-    if (gpio_num == 47)
+    ESP_LOGI(TAG, "INT ARG:%d", gpio_num);
+    uint8_t data = 0;
+    sw7203_check_error(sw7203_register_read(0x04, &data));
+    if (data & 0x40)
     {
-        uint8_t data = 0;
-        sw7203_check_error(sw7203_register_read(0x04, &data));
-        if (data & 0x40)
-        {
-            ESP_LOGI(TAG, "VSYS voltage limit exceeded");
-        }
-        if (data & 0x20)
-        {
-            ESP_LOGI(TAG, "Battery charge time limit exceeded");
-        }
-        if (data & 0x10)
-        {
-            ESP_LOGI(TAG, "Battery fullcharged");
-        }
-        if (data & 0x08)
-        {
-            ESP_LOGI(TAG, "DCIN moved in");
-            AC_IN = true;
-            sw7203_start_charge();
-        }
-        if (data & 0x04)
-        {
-            ESP_LOGI(TAG, "DCIN moved out");
-            AC_IN = false;
-            sw7203_stop_charge();
-        }
-        sw7203_check_error(sw7203_register_read(0x05, &data));
-        if (data & 0x80)
-        {
-            ESP_LOGI(TAG, "SW7203 over temperature");
-        }
-        if (data & 0x10)
-        {
-            ESP_LOGI(TAG, "VBAT voltage limit exceeded");
-        }
-        if (data & 0x08)
-        {
-            ESP_LOGI(TAG, "VBAT voltage limit subceeded");
-        }
-        if (data & 0x01)
-        {
-            ESP_LOGI(TAG, "VBUS power limit exceeded");
-        }
-        sw7203_check_error(sw7203_register_read(0x06, &data));
-        if (data & 0x02)
-        {
-            NVDC_BAT_charge = true;
-        }
-        else
-        {
-            NVDC_BAT_charge = false;
-        }
-        uint8_t cmd[2][2] = {{0x04, 0b11111111}, {0x05, 0b11111111}};
-        sw7203_register_write(cmd[0]);
-        sw7203_register_write(cmd[1]);
+        ESP_LOGI(TAG, "VSYS voltage limit exceeded");
     }
+    if (data & 0x20)
+    {
+        ESP_LOGI(TAG, "Battery charge time limit exceeded");
+    }
+    if (data & 0x10)
+    {
+        ESP_LOGI(TAG, "Battery fullcharged");
+    }
+    if (data & 0x08)
+    {
+        ESP_LOGI(TAG, "DCIN moved in");
+        AC_IN = true;
+        sw7203_start_charge();
+    }
+    if (data & 0x04)
+    {
+        ESP_LOGI(TAG, "DCIN moved out");
+        AC_IN = false;
+        sw7203_stop_charge();
+    }
+    sw7203_check_error(sw7203_register_read(0x05, &data));
+    if (data & 0x80)
+    {
+        ESP_LOGI(TAG, "SW7203 over temperature");
+    }
+    if (data & 0x10)
+    {
+        ESP_LOGI(TAG, "VBAT voltage limit exceeded");
+    }
+    if (data & 0x08)
+    {
+        ESP_LOGI(TAG, "VBAT voltage limit subceeded");
+    }
+    if (data & 0x01)
+    {
+        ESP_LOGI(TAG, "VBUS power limit exceeded");
+    }
+    sw7203_check_error(sw7203_register_read(0x06, &data));
+    if (data & 0x02)
+    {
+        NVDC_BAT_charge = true;
+    }
+    else
+    {
+        NVDC_BAT_charge = false;
+    }
+    uint8_t cmd[2][2] = {{0x04, 0b11111111}, {0x05, 0b11111111}};
+    sw7203_register_write(cmd[0]);
+    sw7203_register_write(cmd[1]);
 }
 #endif
 extern "C" void app_main()
@@ -474,7 +471,7 @@ extern "C" void app_main()
         .mode = GPIO_MODE_INPUT,
         .pull_up_en = GPIO_PULLUP_ENABLE,
         .pull_down_en = GPIO_PULLDOWN_DISABLE,
-        .intr_type = GPIO_INTR_LOW_LEVEL,
+        .intr_type = GPIO_INTR_NEGEDGE,
     };
     gpio_config(&SW7203_IRQ_gpio_config);
     gpio_install_isr_service(0);
