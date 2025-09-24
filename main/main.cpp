@@ -230,6 +230,7 @@ void sw7203_irq_func(void *arg)
             {
                 ESP_LOGI(TAG, "DCIN moved in");
                 AC_IN = true;
+                vTaskDelay(100 / portTICK_PERIOD_MS);
                 sw7203_start_charge();
             }
             if (data & 0x04)
