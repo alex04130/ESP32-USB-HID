@@ -30,3 +30,17 @@ Steps:
 idf.py set-target esp32s3
 idf.py build
 idf.py -p /dev/ttyUSB0 flash monitor
+
+## Project Structure
+ - main/ - application entry and device integration
+ - include/esp32ups_hid/ - HID report descriptor & UPS definitions
+ - include/bq4050/ - BQ4050 access layer
+ - include/SK_BQ4050_HID/ - mapping between metering and HID fields
+
+Validation Notes
+Verified driverless enumeration and UPS recognition on Windows/macOS
+Earlier hardware revision exhibited idf.py flashing failure near ~66% write progress.
+A controlled experiment (desoldered module + external USB-UART) isolated the issue to PCB physical implementation, leading to a full redesign (v1.2).
+
+## License
+(TODO)
